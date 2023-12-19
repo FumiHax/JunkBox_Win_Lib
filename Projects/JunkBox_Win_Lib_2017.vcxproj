@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|x64">
+      <Configuration>Template</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CEA31E92-728C-4BAC-A6D9-45A1CF1ADA58}</ProjectGuid>
+    <RootNamespace>TUIS_Win_Lib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>JunkBox_Win_Lib</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|x64'">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Configuration)64\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)64\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Configuration)64\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)64\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\JunkBox_Lib++\GraphLib;..\JunkBox_Lib++\BasicLib;..\JunkBox_Lib++\MathLib;..\JunkBox_Lib++\NiLib;..\JunkBox_Lib++\BasicLib\Lib;..\JunkBox_Lib++\ExtendLib;..\JunkBox_Lib++\ExtendLib\xLib;.\WinBaseLib;.\DLGBoxLib;.\MFCBaseLib;.\MFCLib;.\WinNiLib;<IncludePath>$(IncludePath);$(DXSDK_DIR)Include</IncludePath>;C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.7.0\inc;C:\Program Files (x86)\Microsoft SDKs\Speech\v11.0\Include;C:\Program Files (x86)\OpenNI\Include;C:\Program Files (x86)\OpenNI2\Include;C:\Program Files (x86)\PrimeSense\NiTE2\Include;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;..\magdb142;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_WINDOWS;DISABLE_KINECT_SDK;DISABLE_OPENNI2;DISABLE_NI_SPEECH;DISABLE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\JunkBox_Lib++\GraphLib;..\JunkBox_Lib++\BasicLib;..\JunkBox_Lib++\MathLib;..\JunkBox_Lib++\NiLib;..\JunkBox_Lib++\BasicLib\Lib;..\JunkBox_Lib++\ExtendLib;..\JunkBox_Lib++\ExtendLib\xLib;.\WinBaseLib;.\DLGBoxLib;.\MFCBaseLib;.\MFCLib;.\WinNiLib;<IncludePath>$(IncludePath);$(DXSDK_DIR)Include</IncludePath>;C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.7.0\inc;C:\Program Files\Microsoft SDKs\Speech\v11.0\Include;C:\Program Files\OpenNI\Include;C:\Program Files\OpenNI2\Include;C:\Program Files\PrimeSense\NiTE2\Include;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_LIB;_WINDOWS;DISABLE_KINECT_SDK;DISABLE_OPENNI2;DISABLE_NI_SPEECH;DISABLE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\JunkBox_Lib++\GraphLib;..\JunkBox_Lib++\BasicLib;..\JunkBox_Lib++\MathLib;..\JunkBox_Lib++\NiLib;..\JunkBox_Lib++\BasicLib\Lib;..\JunkBox_Lib++\ExtendLib;..\JunkBox_Lib++\ExtendLib\xLib;.\WinBaseLib;.\MFCBaseLib;.\DLGBoxLib;.\MFCLib;.\WinNiLib;<IncludePath>$(IncludePath);$(DXSDK_DIR)Include</IncludePath>;C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.7.0\inc;C:\Program Files (x86)\Microsoft SDKs\Speech\v11.0\Include;C:\Program Files (x86)\OpenNI\Include;C:\Program Files (x86)\OpenNI2\Include;C:\Program Files (x86)\PrimeSense\NiTE2\Include;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_WINDOWS;ENABLE_KINECT_SDK;DISABLE_OPENNI2;DISABLE_NI_SPEECH;DISABLE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\JunkBox_Lib++\GraphLib;..\JunkBox_Lib++\BasicLib;..\JunkBox_Lib++\MathLib;..\JunkBox_Lib++\NiLib;..\JunkBox_Lib++\BasicLib\Lib;..\JunkBox_Lib++\ExtendLib;..\JunkBox_Lib++\ExtendLib\xLib;.\WinBaseLib;.\MFCBaseLib;.\DLGBoxLib;.\MFCLib;.\WinNiLib;<IncludePath>$(IncludePath);$(DXSDK_DIR)Include</IncludePath>;C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.7.0\inc;C:\Program Files\Microsoft SDKs\Speech\v11.0\Include;C:\Program Files\OpenNI\Include;C:\Program Files\OpenNI2\Include;C:\Program Files\PrimeSense\NiTE2\Include;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_LIB;_WINDOWS;ENABLE_KINECT_SDK;DISABLE_OPENNI2;DISABLE_NI_SPEECH;DISABLE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="MFCBaseLib\DxBaseClass.cpp" />
+    <ClCompile Include="MFCBaseLib\ExClass.cpp" />
+    <ClCompile Include="MFCBaseLib\ExDocument.cpp" />
+    <ClCompile Include="MFCBaseLib\ExFrame.cpp" />
+    <ClCompile Include="MFCBaseLib\ExTextFrame.cpp" />
+    <ClCompile Include="MFCBaseLib\ExTextView.cpp" />
+    <ClCompile Include="MFCBaseLib\ExToolBar.cpp" />
+    <ClCompile Include="MFCBaseLib\ExView.cpp" />
+    <ClCompile Include="MFCBaseLib\GlBaseClass.cpp" />
+    <ClCompile Include="MFCBaseLib\MFCio.cpp" />
+    <ClCompile Include="MFCBaseLib\MFCTool.cpp" />
+    <ClCompile Include="MFCLib\Dx2DView.cpp" />
+    <ClCompile Include="MFCLib\DxDirectView.cpp" />
+    <ClCompile Include="MFCLib\DxGraphDoc.cpp" />
+    <ClCompile Include="MFCLib\DxMGRView.cpp" />
+    <ClCompile Include="MFCLib\DxSRenderView.cpp" />
+    <ClCompile Include="MFCLib\DxVScrollView.cpp" />
+    <ClCompile Include="MFCLib\GlProcView.cpp" />
+    <ClCompile Include="MFCLib\LogWndDoc.cpp" />
+    <ClCompile Include="MFCLib\LogWndFrame.cpp" />
+    <ClCompile Include="MFCLib\LogWndView.cpp" />
+    <ClCompile Include="MFCLib\RwGRDoc.cpp" />
+    <ClCompile Include="MFCLib\vThumbNailDoc.cpp" />
+    <ClCompile Include="MFCLib\vThumbNailFrame.cpp" />
+    <ClCompile Include="WinBaseLib\WGL.cpp" />
+    <ClCompile Include="WinBaseLib\WinAudioStream.cpp" />
+    <ClCompile Include="WinBaseLib\WinAudioTool.cpp" />
+    <ClCompile Include="WinBaseLib\WinMediaBuffer.cpp" />
+    <ClCompile Include="WinNiLib\KinectDevice.cpp" />
+    <ClCompile Include="WinNiLib\KinectFaceTracker.cpp" />
+    <ClCompile Include="WinNiLib\KinectAudio.cpp" />
+    <ClCompile Include="WinNiLib\KinectWin.cpp" />
+    <ClCompile Include="WinNiLib\NiBVHName.cpp" />
+    <ClCompile Include="WinNiLib\NiBVHTool.cpp" />
+    <ClCompile Include="WinNiLib\NiFileTool.cpp" />
+    <ClCompile Include="WinNiLib\NiJointsTool.cpp" />
+    <ClCompile Include="WinNiLib\NiJTextTool.cpp" />
+    <ClCompile Include="WinNiLib\NiSpeech.cpp" />
+    <ClCompile Include="WinNiLib\NiToolWin.cpp" />
+    <ClCompile Include="WinNiLib\NiVMDTool.cpp" />
+    <ClCompile Include="WinNiLib\OpenNiAudio.cpp" />
+    <ClCompile Include="WinNiLib\OpenNiWin.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\ContrastDLG.cpp" />
+    <ClCompile Include="DLGBoxLib\InputNumDLG.cpp" />
+    <ClCompile Include="DLGBoxLib\MessageBoxDLG.cpp" />
+    <ClCompile Include="DLGBoxLib\ProgressBarDLG.cpp" />
+    <ClCompile Include="DLGBoxLib\ProgressTextDLG.cpp" />
+    <ClCompile Include="DLGBoxLib\ReadFilesDLG.cpp" />
+    <ClCompile Include="DLGBoxLib\SetHeaderDLG.cpp" />
+    <ClCompile Include="DLGBoxLib\WriteFilesDLG.cpp" />
+    <ClCompile Include="WinBaseLib\Dx9.cpp" />
+    <ClCompile Include="WinBaseLib\WinDLLTool.cpp" />
+    <ClCompile Include="WinBaseLib\WinSMTool.cpp" />
+    <ClCompile Include="WinBaseLib\WinTools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\LogWndToolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WinLib.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DLGBoxLib\DLGBoxBase.h" />
+    <ClInclude Include="MFCBaseLib\DxBaseClass.h" />
+    <ClInclude Include="MFCBaseLib\ExClass.h" />
+    <ClInclude Include="MFCBaseLib\ExDocument.h" />
+    <ClInclude Include="MFCBaseLib\ExFrame.h" />
+    <ClInclude Include="MFCBaseLib\ExTextFrame.h" />
+    <ClInclude Include="MFCBaseLib\ExTextView.h" />
+    <ClInclude Include="MFCBaseLib\ExToolBar.h" />
+    <ClInclude Include="MFCBaseLib\ExView.h" />
+    <ClInclude Include="MFCBaseLib\GlBaseClass.h" />
+    <ClInclude Include="MFCBaseLib\MFCBase.h" />
+    <ClInclude Include="MFCBaseLib\MFCio.h" />
+    <ClInclude Include="MFCBaseLib\MFCTool.h" />
+    <ClInclude Include="MFCLib\appCallBack.h" />
+    <ClInclude Include="MFCLib\Dx2DView.h" />
+    <ClInclude Include="MFCLib\DxDirectView.h" />
+    <ClInclude Include="MFCLib\DxGraphDoc.h" />
+    <ClInclude Include="MFCLib\DxMGRView.h" />
+    <ClInclude Include="MFCLib\DxSRenderView.h" />
+    <ClInclude Include="MFCLib\DxVScrollView.h" />
+    <ClInclude Include="MFCLib\GlProcView.h" />
+    <ClInclude Include="MFCLib\LogWndDoc.h" />
+    <ClInclude Include="MFCLib\LogWndFrame.h" />
+    <ClInclude Include="MFCLib\LogWndView.h" />
+    <ClInclude Include="MFCLib\MFCLib.h" />
+    <ClInclude Include="MFCLib\RwGRDoc.h" />
+    <ClInclude Include="MFCLib\vThumbNailDoc.h" />
+    <ClInclude Include="MFCLib\vThumbNailFrame.h" />
+    <ClInclude Include="WinBaseLib\WGL.h" />
+    <ClInclude Include="WinBaseLib\WinAudioStream.h" />
+    <ClInclude Include="WinBaseLib\WinAudioTool.h" />
+    <ClInclude Include="WinBaseLib\WinBaseResource.h" />
+    <ClInclude Include="WinBaseLib\WinMediaBuffer.h" />
+    <ClInclude Include="WinNiLib\KinectDevice.h" />
+    <ClInclude Include="WinNiLib\KinectFaceTracker.h" />
+    <ClInclude Include="WinNiLib\KinectAudio.h" />
+    <ClInclude Include="WinNiLib\KinectWin.h" />
+    <ClInclude Include="WinNiLib\NiBVHName.h" />
+    <ClInclude Include="WinNiLib\NiBVHTool.h" />
+    <ClInclude Include="WinNiLib\NiFileTool.h" />
+    <ClInclude Include="WinNiLib\NiJointsTool.h" />
+    <ClInclude Include="WinNiLib\NiJTextTool.h" />
+    <ClInclude Include="WinNiLib\NiSpeech.h" />
+    <ClInclude Include="WinNiLib\NiToolWin.h" />
+    <ClInclude Include="WinNiLib\NiVMDTool.h" />
+    <ClInclude Include="WinNiLib\OpenNiAudio.h" />
+    <ClInclude Include="WinNiLib\OpenNiWin.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="DLGBoxLib\ContrastDLG.h" />
+    <ClInclude Include="DLGBoxLib\InputNumDLG.h" />
+    <ClInclude Include="DLGBoxLib\MessageBoxDLG.h" />
+    <ClInclude Include="DLGBoxLib\ProgressBarDLG.h" />
+    <ClInclude Include="DLGBoxLib\ProgressTextDLG.h" />
+    <ClInclude Include="DLGBoxLib\ReadFilesDLG.h" />
+    <ClInclude Include="DLGBoxLib\SetHeaderDLG.h" />
+    <ClInclude Include="DLGBoxLib\WriteFilesDLG.h" />
+    <ClInclude Include="WinBaseLib\Dx9.h" />
+    <ClInclude Include="WinBaseLib\WinBaseLib.h" />
+    <ClInclude Include="WinBaseLib\WinDLLTool.h" />
+    <ClInclude Include="WinBaseLib\WinSMTool.h" />
+    <ClInclude Include="WinBaseLib\WinTools.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="WinLib.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

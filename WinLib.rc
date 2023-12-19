@@ -1,0 +1,781 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 (日本) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+//#pragma code_page(932)
+#pragma code_page(65001)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RFDLG DIALOGEX 0, 0, 199, 63
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ファイル読み込み設定"
+FONT 9, "ＭＳ ゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,14,41,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,133,41,52,13
+    EDITTEXT        IDC_RF_FNAME,13,18,111,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RF_FROMNUM,135,18,23,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RF_TONUM,163,18,23,15,ES_AUTOHSCROLL
+    LTEXT           "ファイル名",IDC_RF_TTL_FNAME,14,7,111,9,SS_CENTERIMAGE
+    LTEXT           "From",IDC_RF_TTL_FROMNUM,137,7,23,10,SS_CENTERIMAGE
+    LTEXT           "To",IDC_RF_TTL_TONUM,165,7,21,9,SS_CENTERIMAGE
+    PUSHBUTTON      "ヘッダ指定",IDSET,74,41,48,13,WS_DISABLED
+END
+
+IDD_CNTDLG DIALOGEX 0, 0, 251, 73
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "コントラスト設定"
+FONT 9, "ＭＳ ゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,56,52,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,144,52,50,14
+    CONTROL         "Slider2",IDC_CNT_SLIDER_CNTMAX,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS,35,27,159,19
+    EDITTEXT        IDC_CNT_CNTMAX,195,29,39,14,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_CNT_SLIDER_CNTMIN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS,35,7,159,17
+    EDITTEXT        IDC_CNT_CNTMIN,195,7,39,14,ES_AUTOHSCROLL
+    LTEXT           "最小値",IDC_STATIC,7,13,25,13
+    LTEXT           "最大値",IDC_STATIC,7,30,25,13
+END
+
+IDD_FHDLG DIALOGEX 0, 0, 115, 206
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ファイルヘッダ設定"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,185,40,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,70,185,38,14
+    EDITTEXT        IDC_FH_HSIZE,53,7,53,13,ES_AUTOHSCROLL
+    LTEXT           "ヘッダサイズ",IDC_STATIC,7,7,42,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_FH_XSIZE,53,26,53,13,ES_AUTOHSCROLL
+    LTEXT           "X方向サイズ",IDC_STATIC,7,26,42,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_FH_YSIZE,53,45,53,13,ES_AUTOHSCROLL
+    LTEXT           "Y方向サイズ",IDC_STATIC,7,45,42,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_FH_ZSIZE,53,64,53,13,ES_AUTOHSCROLL
+    LTEXT           "Z方向サイズ",IDC_STATIC,7,64,42,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_FH_DEPTH,53,83,53,13,ES_AUTOHSCROLL
+    LTEXT           "デプス (bit)",IDC_STATIC,7,83,42,13,SS_CENTERIMAGE
+    CONTROL         "Little Endian",IDC_FH_LTLEND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,139,68,14
+    CONTROL         "ヘッダの指定を有効にする",IDC_FH_SAVEP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,104,101,14
+    EDITTEXT        IDC_FH_BASE,53,160,53,13,ES_AUTOHSCROLL
+    LTEXT           "基底値の指定",IDC_STATIC,7,160,42,13,SS_CENTERIMAGE
+    LTEXT           "---------------------------------",IDC_STATIC,7,125,101,8
+END
+
+IDD_PROGBAR DIALOGEX 0, 0, 189, 15
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プログレスバー（カウンタ）"
+FONT 9, "ＭＳ Ｐゴシック", 400, 0, 0x80
+BEGIN
+    CONTROL         "Progress1",IDC_PROGBAR_M,"msctls_progress32",WS_BORDER,1,1,187,13
+END
+
+IDD_PROGTEXT DIALOGEX 0, 0, 99, 22
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プログレスカウンタ"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    CTEXT           "処理経過",IDC_PROGTEXT_MSG,5,2,88,17,SS_CENTERIMAGE
+END
+
+IDD_WFDLG DIALOGEX 0, 0, 171, 105
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ファイル書き込み設定"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,29,84,43,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,99,84,45,14
+    EDITTEXT        IDC_WF_FNAME,8,44,93,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WF_FROMNUM,110,44,21,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WF_TONUM,138,44,21,14,ES_AUTOHSCROLL
+    LTEXT           "ファイル名",IDC_STATIC,8,32,34,11,SS_CENTERIMAGE
+    LTEXT           "From",IDC_STATIC,111,33,23,9,SS_CENTERIMAGE
+    LTEXT           "To",IDC_STATIC,138,32,20,11,SS_CENTERIMAGE
+    CONTROL         "マルチスライス（Z軸方向を一枚づつ保存）",IDC_WF_MFL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,65,140,14
+    LTEXT           "ファイル形式",IDC_STATIC,9,1,45,11,SS_CENTERIMAGE
+    COMBOBOX        IDC_WF_FORMATS,8,12,76,72,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_INPNUM_DLG DIALOGEX 0, 0, 166, 54
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "整数値入力"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,33,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,94,33,50,14
+    CTEXT           "タイトル",IDC_INM_VALTTL,7,8,80,17,SS_CENTERIMAGE
+    EDITTEXT        IDC_INM_VAL,90,10,60,15,ES_AUTOHSCROLL
+END
+
+IDD_INPFLT_DLG DIALOGEX 0, 0, 166, 54
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "実数値入力"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,33,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,94,33,50,14
+    CTEXT           "タイトル",IDC_INM_FLTTTL,7,8,80,17,SS_CENTERIMAGE
+    EDITTEXT        IDC_INM_FLT,90,10,60,15,ES_AUTOHSCROLL
+END
+
+IDD_MLT_INPNUM_DLG DIALOGEX 0, 0, 319, 94
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "数値入力"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,63,75,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,217,75,50,14
+    CTEXT           "タイトル1",IDC_INM_MLT_VALTTL0,7,4,80,17,SS_CENTERIMAGE
+    CTEXT           "タイトル2",IDC_INM_MLT_VALTTL1,163,4,80,17,SS_CENTERIMAGE
+    CTEXT           "タイトル3",IDC_INM_MLT_VALTTL2,7,24,80,17,SS_CENTERIMAGE
+    CTEXT           "タイトル4",IDC_INM_MLT_VALTTL3,163,24,80,17,SS_CENTERIMAGE
+    CTEXT           "タイトル5",IDC_INM_MLT_VALTTL4,7,44,80,17,SS_CENTERIMAGE
+    CTEXT           "タイトル6",IDC_INM_MLT_VALTTL5,163,44,80,17,SS_CENTERIMAGE
+    EDITTEXT        IDC_INM_MLT_VAL0,89,6,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL1,245,6,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL2,89,26,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL3,245,26,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL4,89,46,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL5,245,46,60,15,ES_AUTOHSCROLL
+END
+
+IDD_MESG_BOX DIALOGEX 0, 0, 143, 32
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "メッセージボックス"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    CTEXT           "メッセージ",IDC_MESG_BOX_TEXT,2,3,139,26,SS_CENTERIMAGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_RFDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_CNTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+
+    IDD_FHDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 108
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_PROGBAR, DIALOG
+    BEGIN
+    END
+
+    IDD_PROGTEXT, DIALOG
+    BEGIN
+    END
+
+    IDD_WFDLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_INPNUM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        BOTTOMMARGIN, 47
+    END
+
+    IDD_INPFLT_DLG, DIALOG
+    BEGIN
+    END
+
+    IDD_MLT_INPNUM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        BOTTOMMARGIN, 89
+    END
+
+    IDD_MESG_BOX, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_LOG_WND_TOOLBAR TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_LOG_SAVE
+    SEPARATOR
+    BUTTON      ID_LOG_COPY
+    SEPARATOR
+    BUTTON      ID_LOG_CLEAR
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_LOG_WND_TOOLBAR     BITMAP                  "res\\LogWndToolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_STR_FAIL_GET_DX9DEV "Dx9デバイスの取得に失敗しました"
+    IDS_STR_FAIL_CRT_BAKBUF "バックバッファの作成に失敗しました"
+    IDS_STR_FAIL_TRNS_BAKBUF "バックバッファへの転送に失敗しました"
+    IDS_STR_FAIL_CRT_SURFACE "サーフェイスの作成に失敗しました"
+    IDS_STR_FAIL_TRNS_SURFACE "サーフェイスへの転送に失敗しました"
+    IDS_STR_FAIL_CLR_WND    "画面クリアに失敗しました"
+    IDS_STR_FAIL_RESTR_DX9DEV "DX9のデバイスを復元できません"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_FAIL_INIT_OPENNI "OpenNIデバイスの初期化に失敗しました"
+    IDS_STR_FAIL_REINIT_OBJ "オブジェクトの再初期化に失敗しました"
+    IDS_STR_FAIL_REGET_BAKBUF "バックバッファの再確保に失敗しました"
+    IDS_STR_FAIL_REGET_SURFACE "サーフェイスの再確保に失敗しました"
+    IDS_STR_FAIL_RETRNS_SURFACE "サーフェイスへの再転送に失敗しました"
+    IDS_STR_FAIL_GET_INPDEV "インプットデバイスの取得に失敗しました"
+    IDS_STR_FAIL_GET_MUSDEV "マウスデバイスの取得に失敗しました"
+    IDS_STR_FAIL_GET_KEYDEV "キーボードデバイスの取得に失敗しました"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_UNSPT_DATA      "未サポートファイル形式"
+    IDS_STR_IMP_PROCESS     "処理不能"
+    IDS_STR_DLTD_DATA       "データが削除されています"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_OK              "OK"
+    IDS_STR_ERROR           "エラー"
+    IDS_STR_CNFRM           "確認"
+    IDS_STR_UNUSED          "未使用"
+    IDS_STR_CANCEL          "キャンセル"
+    IDS_STR_INFO            "情報"
+    IDS_STR_UNKWN           "不明"
+    IDS_STR_ATTNSN          "注意"
+    IDS_STR_WARN            "警告"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_WRTNG_FILE      "ファイル書き込み中 ..."
+    IDS_STR_RDNG_FILE       "ファイル読み込み中 ..."
+    IDS_STR_CANCELING       "キャンセル中 ..."
+    IDS_STR_CNFRM_CNTNUE    "通知: 処理は継続されます"
+    IDS_STR_TRNS_DISPDATA   "表示用データへ変換"
+    IDS_STR_IMG_NUM         "画像 Num. ="
+    IDS_STR_NEXT_QUSTN      "次へ？"
+    IDS_STR_PROC_VERTEX_BUF "頂点バッファ処理"
+    IDS_STR_OPEN_FILE       "ファイルを開く"
+    IDS_STR_DEL_DATA        "データ削除"
+    IDS_STR_CANCELD_PROC    "処理はキャンセルされました"
+    IDS_STR_RSLT_PROC       "処理結果"
+    IDS_STR_SPECIFY_SAVE_FILE "保存用ファイルを指定する"
+    IDS_STR_SPECIFY_LOAD_FILE "読み込みファイルを指定する"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_UNSPT_VWMODE    "この画像ではサポートされていないビューモードが指定されました"
+    IDS_STR_INVLD_VWMODE    "この画像では意味のないビューモードが指定されました"
+    IDS_STR_UNKWN_VWMODE    "未知のビューモードが指定されました"
+    IDS_STR_NULLPT_FRM      "Frameへのポインタが NULLです"
+    IDS_STR_CANCEL_OPRTN    "操作がキャンセルされました"
+    IDS_STR_ERR_OPEN_FILE   "ファイルのオープンエラーです"
+    IDS_STR_ERR_UNDISP      "表示不可能なファイルです"
+    IDS_STR_ERR_PREDISP     "表示の準備に失敗しました"
+    IDS_STR_ERR_MEMORY      "メモリの確保エラーです"
+    IDS_STR_FAIL_COPY_FLDATA "ファイルデータのコピーに失敗"
+    IDS_STR_ERR_UNKWN       "詳細不明なエラーが発生しました"
+    IDS_STR_CANCEL_TRNS_DATA "データ変換がキャンセルされました"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_CANCEL_OPNFILE  "ファイル読み込みがキャンセルされました"
+    IDS_STR_CANCEL_VERTEX_BUF_SET1 "頂点バッファの設定（１）がキャンセルされました"
+    IDS_STR_CANCEL_VERTEX_BUF_SET2 "頂点バッファの設定（２）がキャンセルされました"
+    IDS_STR_INFO_VERTEX_ZERO "頂点数が 0です"
+    IDS_STR_ERR_VERTEX_NUM  "頂点数エラー"
+    IDS_STR_FAIL_GET_VERTEX_BUF "頂点バッファの確保に失敗しました"
+    IDS_STR_ERR_READ_FILE   "ファイルの読み込みに失敗しました"
+    IDS_STR_ERR_WRITE_FILE  "ファイルの書き込みに失敗しました"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_FONT_SIZE       "120"
+    IDS_STR_FONT_MINCHO     "ＭＳ 明朝"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_FONT_GOTHIC     "ＭＳ ゴシック"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_LOCALE          "Japanese"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_ASK_LOG_CLEAR   "ログをクリアしますか？"
+    IDS_STR_ASK_OVERWRITE   "ファイルが存在します．上書きしますか？"
+END
+
+#endif    // 日本語 (日本) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CNTDLG DIALOGEX 0, 0, 239, 60
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Contrast Settig"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,56,41,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,143,41,50,14
+    CONTROL         "Slider2",IDC_CNT_SLIDER_CNTMAX,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS,41,22,149,19
+    EDITTEXT        IDC_CNT_CNTMAX,193,21,39,14,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_CNT_SLIDER_CNTMIN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS,41,3,149,17
+    EDITTEXT        IDC_CNT_CNTMIN,193,3,39,14,ES_AUTOHSCROLL
+    LTEXT           "Min Value",IDC_STATIC,7,6,32,9
+    LTEXT           "Max Value",IDC_STATIC,7,25,34,10
+END
+
+IDD_FHDLG DIALOGEX 0, 0, 115, 167
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File Header Setting"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,149,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,70,149,38,14
+    EDITTEXT        IDC_FH_HSIZE,53,7,53,13,ES_AUTOHSCROLL
+    LTEXT           "Header Size",IDC_STATIC,7,7,42,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_FH_XSIZE,53,22,53,13,ES_AUTOHSCROLL
+    LTEXT           "X Size",IDC_STATIC,7,22,42,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_FH_YSIZE,53,36,53,13,ES_AUTOHSCROLL
+    LTEXT           "Y Size",IDC_STATIC,7,36,42,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_FH_ZSIZE,53,51,53,13,ES_AUTOHSCROLL
+    LTEXT           "Z Size",IDC_STATIC,7,51,42,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_FH_DEPTH,53,66,53,13,ES_AUTOHSCROLL
+    LTEXT           "Depth (bit)",IDC_STATIC,7,66,42,13,SS_CENTERIMAGE
+    CONTROL         "Little Endian",IDC_FH_LTLEND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,109,68,14
+    CONTROL         "Enable this Header Setting",IDC_FH_SAVEP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,82,101,14
+    EDITTEXT        IDC_FH_BASE,53,124,53,13,ES_AUTOHSCROLL
+    LTEXT           "Base Value",IDC_STATIC,7,124,42,13,SS_CENTERIMAGE
+    LTEXT           "---------------------------------",IDC_STATIC,7,97,101,8
+END
+
+IDD_INPFLT_DLG DIALOGEX 0, 0, 167, 50
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Input Float Number"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,32,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,94,32,50,14
+    CTEXT           "Title",IDC_INM_FLTTTL,9,12,80,11,SS_CENTERIMAGE
+    EDITTEXT        IDC_INM_FLT,87,10,60,15,ES_AUTOHSCROLL
+END
+
+IDD_PROGBAR DIALOGEX 0, 0, 190, 18
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Progress Bar (Counter)"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    CONTROL         "Progress1",IDC_PROGBAR_M,"msctls_progress32",WS_BORDER,5,3,180,10
+END
+
+IDD_PROGTEXT DIALOGEX 0, 0, 99, 16
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Progress Counter"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    CTEXT           "Progress",IDC_PROGTEXT_MSG,5,1,88,14,SS_CENTERIMAGE
+END
+
+IDD_RFDLG DIALOGEX 0, 0, 199, 51
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Open File Setting"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,15,33,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,33,52,13
+    EDITTEXT        IDC_RF_FNAME,13,13,111,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RF_FROMNUM,135,13,23,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RF_TONUM,163,13,23,15,ES_AUTOHSCROLL
+    LTEXT           "File Name",IDC_RF_TTL_FNAME,14,2,111,9,SS_CENTERIMAGE
+    LTEXT           "From",IDC_RF_TTL_FROMNUM,137,2,23,10,SS_CENTERIMAGE
+    LTEXT           "To",IDC_RF_TTL_TONUM,165,2,21,9,SS_CENTERIMAGE
+    PUSHBUTTON      "Header Setup",IDSET,71,33,56,13,WS_DISABLED
+END
+
+IDD_WFDLG DIALOGEX 0, 0, 182, 89
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Write File Setting"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,29,71,43,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,71,45,14
+    EDITTEXT        IDC_WF_FNAME,9,37,93,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WF_FROMNUM,109,36,21,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WF_TONUM,139,36,21,14,ES_AUTOHSCROLL
+    LTEXT           "File Name",IDC_STATIC,9,25,34,11,SS_CENTERIMAGE
+    LTEXT           "From",IDC_STATIC,109,26,23,9,SS_CENTERIMAGE
+    LTEXT           "To",IDC_STATIC,139,25,20,11,SS_CENTERIMAGE
+    CONTROL         "Multi Slices (It preserves one data per Z direction)",IDC_WF_MFL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,53,169,14
+    LTEXT           "File Format",IDC_STATIC,9,1,45,11,SS_CENTERIMAGE
+    COMBOBOX        IDC_WF_FORMATS,9,12,76,72,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_MLT_INPNUM_DLG DIALOGEX 0, 0, 319, 85
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Input Multi Numbers"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,63,66,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,217,66,50,14
+    CTEXT           "Title1",IDC_INM_MLT_VALTTL0,7,4,80,17,SS_CENTERIMAGE
+    CTEXT           "Title2",IDC_INM_MLT_VALTTL1,163,4,80,17,SS_CENTERIMAGE
+    CTEXT           "Title3",IDC_INM_MLT_VALTTL2,7,22,80,17,SS_CENTERIMAGE
+    CTEXT           "Title4",IDC_INM_MLT_VALTTL3,163,22,80,17,SS_CENTERIMAGE
+    CTEXT           "Title5",IDC_INM_MLT_VALTTL4,7,40,80,17,SS_CENTERIMAGE
+    CTEXT           "Title6",IDC_INM_MLT_VALTTL5,163,40,80,17,SS_CENTERIMAGE
+    EDITTEXT        IDC_INM_MLT_VAL0,89,6,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL1,245,6,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL2,89,24,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL3,245,24,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL4,89,42,60,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INM_MLT_VAL5,245,42,60,15,ES_AUTOHSCROLL
+END
+
+IDD_INPNUM_DLG DIALOGEX 0, 0, 167, 50
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Input Integer Number"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,32,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,94,32,50,14
+    CTEXT           "Title",IDC_INM_VALTTL,7,12,80,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_INM_VAL,88,10,60,15,ES_AUTOHSCROLL
+END
+
+IDD_MESG_BOX DIALOGEX 0, 0, 148, 32
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Message Box"
+FONT 10, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    CTEXT           "Message",IDC_MESG_BOX_TEXT,5,4,138,25,SS_CENTERIMAGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_CNTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_FHDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 108
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_INPFLT_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 166
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_PROGBAR, DIALOG
+    BEGIN
+        RIGHTMARGIN, 189
+        BOTTOMMARGIN, 15
+    END
+
+    IDD_PROGTEXT, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 15
+    END
+
+    IDD_RFDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_WFDLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 177
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 85
+    END
+
+    IDD_MLT_INPNUM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_INPNUM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_MESG_BOX, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_LOG_WND_TOOLBAR TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_LOG_SAVE
+    SEPARATOR
+    BUTTON      ID_LOG_COPY
+    SEPARATOR
+    BUTTON      ID_LOG_CLEAR
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_LOG_WND_TOOLBAR     BITMAP                  "res\\LogWndToolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_STR_FAIL_GET_DX9DEV "Failed in getting DX9 Device"
+    IDS_STR_FAIL_CRT_BAKBUF "Failed in creating Back Buffer"
+    IDS_STR_FAIL_TRNS_BAKBUF "Failed in tranfer to Back Buffer"
+    IDS_STR_FAIL_CRT_SURFACE "Failed in creating Surface"
+    IDS_STR_FAIL_TRNS_SURFACE "Failed in transfer to Surface"
+    IDS_STR_FAIL_CLR_WND    "Failed in clear Window"
+    IDS_STR_FAIL_RESTR_DX9DEV "Failed in restore DX9 Device"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_FAIL_INIT_OPENNI "Failed in initialization of OpenNI Device"
+    IDS_STR_FAIL_REINIT_OBJ "Failed in re-initialization Object"
+    IDS_STR_FAIL_REGET_BAKBUF "Failed in re-getting Back Buffer"
+    IDS_STR_FAIL_REGET_SURFACE "Failed in re-getting Surface"
+    IDS_STR_FAIL_RETRNS_SURFACE "Failed in re-transfer to Surface"
+    IDS_STR_FAIL_GET_INPDEV "Failed in getting Input Device"
+    IDS_STR_FAIL_GET_MUSDEV "Failed in getting Mouse Device"
+    IDS_STR_FAIL_GET_KEYDEV "Failed in getting Keyboard Device"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_UNSPT_DATA      "Unsupported File Format"
+    IDS_STR_IMP_PROCESS     "Not treatable"
+    IDS_STR_DLTD_DATA       "Data was deleted"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_OK              "OK"
+    IDS_STR_ERROR           "Error"
+    IDS_STR_CNFRM           "Confirmation"
+    IDS_STR_UNUSED          "Unused"
+    IDS_STR_CANCEL          "Cancel"
+    IDS_STR_INFO            "Information"
+    IDS_STR_UNKWN           "Unknown"
+    IDS_STR_ATTNSN          "Attension"
+    IDS_STR_WARN            "Warning"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_WRTNG_FILE      "Writing File ..."
+    IDS_STR_RDNG_FILE       "Reading File ..."
+    IDS_STR_CANCELING       "Canceling ..."
+    IDS_STR_CNFRM_CNTNUE    "Notification: Processing is continued"
+    IDS_STR_TRNS_DISPDATA   "Transfer to Data for Display"
+    IDS_STR_IMG_NUM         "Image Num ="
+    IDS_STR_NEXT_QUSTN      "Next?"
+    IDS_STR_PROC_VERTEX_BUF "Vertex Buffer Processing"
+    IDS_STR_OPEN_FILE       "Open File"
+    IDS_STR_DEL_DATA        "Delete Data"
+    IDS_STR_CANCELD_PROC    "Processing was canceled"
+    IDS_STR_RSLT_PROC       "Result of Processing"
+    IDS_STR_SPECIFY_SAVE_FILE "Specify File for Save"
+    IDS_STR_SPECIFY_LOAD_FILE "Specify File for Load"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_UNSPT_VWMODE    "Unsupported View Mode is specified"
+    IDS_STR_INVLD_VWMODE    "Invalid View Mode is specified"
+    IDS_STR_UNKWN_VWMODE    "Unknown View Mode is specified"
+    IDS_STR_NULLPT_FRM      "Pointer to Frame is NULL"
+    IDS_STR_CANCEL_OPRTN    "Operation is canceled"
+    IDS_STR_ERR_OPEN_FILE   "File Open Error"
+    IDS_STR_ERR_UNDISP      "Undisplayed Data"
+    IDS_STR_ERR_PREDISP     "Failed in the preparation for the Display"
+    IDS_STR_ERR_MEMORY      "Memory Error"
+    IDS_STR_FAIL_COPY_FLDATA "Failed in copying File Data"
+    IDS_STR_ERR_UNKWN       "Unknown Error occurred "
+    IDS_STR_CANCEL_TRNS_DATA "Data transfer was  canceled"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_CANCEL_OPNFILE  "File reading was canceled"
+    IDS_STR_CANCEL_VERTEX_BUF_SET1 "Vertex Buffer Setting (1) is canceled"
+    IDS_STR_CANCEL_VERTEX_BUF_SET2 "Vertex Buffer Setting (2) is canceled"
+    IDS_STR_INFO_VERTEX_ZERO "Vertex Number is Zero"
+    IDS_STR_ERR_VERTEX_NUM  "Vertex Number Error"
+    IDS_STR_FAIL_GET_VERTEX_BUF "Failed in getting Vertex Buffer"
+    IDS_STR_ERR_READ_FILE   "Failed in Read File"
+    IDS_STR_ERR_WRITE_FILE  "Faled in Write File"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_FONT_SIZE       "110"
+    IDS_STR_FONT_MINCHO     "Century"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_FONT_GOTHIC     "Arial"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_LOCALE          "English"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STR_ASK_LOG_CLEAR   "Do You Clear Log?"
+    IDS_STR_ASK_OVERWRITE   "Specified file exists already. Do you over write it?"
+END
+
+#endif    // 英語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

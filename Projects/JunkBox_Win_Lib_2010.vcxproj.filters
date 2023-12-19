@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\WinBaseLib">
+      <UniqueIdentifier>{ad657121-327f-42b9-a66d-18580600e7ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\DLGBoxLib">
+      <UniqueIdentifier>{2fb248d3-cf6a-4045-895c-4a30daee0dac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MFCBaseLib">
+      <UniqueIdentifier>{f0ef97b0-1a3e-4219-a3c5-14b335412e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MFCLib">
+      <UniqueIdentifier>{7ecde47e-c080-41ff-b03e-0db1ad8a39d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\NiLib">
+      <UniqueIdentifier>{5a7e66e4-8d7a-4687-9c82-e1515199c089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MotionLib">
+      <UniqueIdentifier>{d2ff6ea2-2c13-4d62-b6cc-82a6290d7700}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\WinBaseLib">
+      <UniqueIdentifier>{c4c60dab-9511-43cf-bd5f-fcb778879226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\DLGBoxLib">
+      <UniqueIdentifier>{4ec343dc-3a5c-474f-90de-ac8480c64a50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MFCBaseLib">
+      <UniqueIdentifier>{b1285993-e969-4e99-8e38-5ca44f75fbd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MFCLib">
+      <UniqueIdentifier>{91df5269-8e35-4055-9a35-93a366defeba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\NiLib">
+      <UniqueIdentifier>{fb2e2573-d71c-48e3-abdd-d5bb82900b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MotionLib">
+      <UniqueIdentifier>{71774db8-c443-49f8-8bc3-7cfaa5c201ac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBaseLib\Dx9.cpp">
+      <Filter>ソース ファイル\WinBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBaseLib\WinDLLTool.cpp">
+      <Filter>ソース ファイル\WinBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBaseLib\WinSMTool.cpp">
+      <Filter>ソース ファイル\WinBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBaseLib\WinTools.cpp">
+      <Filter>ソース ファイル\WinBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\ContrastDLG.cpp">
+      <Filter>ソース ファイル\DLGBoxLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\InputNumDLG.cpp">
+      <Filter>ソース ファイル\DLGBoxLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\MessageBoxDLG.cpp">
+      <Filter>ソース ファイル\DLGBoxLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\ProgressBarDLG.cpp">
+      <Filter>ソース ファイル\DLGBoxLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\ProgressTextDLG.cpp">
+      <Filter>ソース ファイル\DLGBoxLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\ReadFilesDLG.cpp">
+      <Filter>ソース ファイル\DLGBoxLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\SetHeaderDLG.cpp">
+      <Filter>ソース ファイル\DLGBoxLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DLGBoxLib\WriteFilesDLG.cpp">
+      <Filter>ソース ファイル\DLGBoxLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\DxBaseClass.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\ExClass.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\ExDocument.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\ExFrame.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\ExTextFrame.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\ExTextView.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\ExToolBar.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\ExView.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\GlBaseClass.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\MFCio.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCBaseLib\MFCTool.cpp">
+      <Filter>ソース ファイル\MFCBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\Dx2DView.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\DxDirectView.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\DxGraphDoc.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\DxMGRView.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\DxSRenderView.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\DxVScrollView.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\LogWndDoc.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\LogWndFrame.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\LogWndView.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\RwGRDoc.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\vThumbNailDoc.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\vThumbNailFrame.cpp">
+      <Filter>ソース ファイル\MFCLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCLib\GlProcView.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBaseLib\WGL.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBaseLib\WinAudioStream.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBaseLib\WinAudioTool.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBaseLib\WinMediaBuffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\KinectDevice.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\KinectFaceTracker.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\KinectAudio.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\KinectWin.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\NiBVHName.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\NiBVHTool.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\NiFileTool.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\NiJointsTool.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\NiJTextTool.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\NiSpeech.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\NiToolWin.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\NiVMDTool.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\OpenNiAudio.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="WinNiLib\OpenNiWin.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\LogWndToolbar.bmp">
+      <Filter>リソース ファイル</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WinLib.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\Dx9.h">
+      <Filter>ヘッダー ファイル\WinBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WinBaseLib.h">
+      <Filter>ヘッダー ファイル\WinBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WinDLLTool.h">
+      <Filter>ヘッダー ファイル\WinBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WinSMTool.h">
+      <Filter>ヘッダー ファイル\WinBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WinTools.h">
+      <Filter>ヘッダー ファイル\WinBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\ContrastDLG.h">
+      <Filter>ヘッダー ファイル\DLGBoxLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\InputNumDLG.h">
+      <Filter>ヘッダー ファイル\DLGBoxLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\MessageBoxDLG.h">
+      <Filter>ヘッダー ファイル\DLGBoxLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\ProgressBarDLG.h">
+      <Filter>ヘッダー ファイル\DLGBoxLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\ProgressTextDLG.h">
+      <Filter>ヘッダー ファイル\DLGBoxLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\ReadFilesDLG.h">
+      <Filter>ヘッダー ファイル\DLGBoxLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\SetHeaderDLG.h">
+      <Filter>ヘッダー ファイル\DLGBoxLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\WriteFilesDLG.h">
+      <Filter>ヘッダー ファイル\DLGBoxLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\DxBaseClass.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\ExClass.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\ExDocument.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\ExFrame.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\ExTextFrame.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\ExTextView.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\ExToolBar.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\ExView.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\GlBaseClass.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\MFCio.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\MFCTool.h">
+      <Filter>ヘッダー ファイル\MFCBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\appCallBack.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\Dx2DView.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\DxDirectView.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\DxGraphDoc.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\DxMGRView.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\DxSRenderView.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\DxVScrollView.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\LogWndDoc.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\LogWndFrame.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\LogWndView.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\RwGRDoc.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\vThumbNailDoc.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\vThumbNailFrame.h">
+      <Filter>ヘッダー ファイル\MFCLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DLGBoxLib\DLGBoxBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCBaseLib\MFCBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCLib\GlProcView.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WGL.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WinAudioStream.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WinAudioTool.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WinBaseResource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBaseLib\WinMediaBuffer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\KinectDevice.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\KinectFaceTracker.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\KinectAudio.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\KinectWin.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\NiBVHName.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\NiBVHTool.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\NiFileTool.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\NiJointsTool.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\NiJTextTool.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\NiSpeech.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\NiToolWin.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\NiVMDTool.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\OpenNiAudio.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="WinNiLib\OpenNiWin.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
