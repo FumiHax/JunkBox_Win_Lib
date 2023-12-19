@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /**
 Tools for ExWindows ライブラリ

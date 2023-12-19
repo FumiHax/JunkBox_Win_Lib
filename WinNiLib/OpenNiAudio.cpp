@@ -1,4 +1,4 @@
-
+﻿
 #include  "OpenNiAudio.h"
 
 #if defined(ENABLE_OPENNI) || defined(ENABLE_OPENNI2)

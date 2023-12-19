@@ -1,4 +1,4 @@
-/**
+﻿/**
 @brief    Speech Platform クラス  
 @file     NiSpeech.cpp
 @version  0.9

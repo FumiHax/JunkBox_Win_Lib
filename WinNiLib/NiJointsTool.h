@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include  "NiToolWin.h"
 #include  "Vector.h"

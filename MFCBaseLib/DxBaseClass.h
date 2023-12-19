@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include  "ExClass.h"
 #include  "Dx9.h"

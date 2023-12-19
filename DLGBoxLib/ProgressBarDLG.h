@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /**
 @brief     再帰定義可能なプログレスバーカウンタ

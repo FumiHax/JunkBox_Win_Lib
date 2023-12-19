@@ -1,4 +1,4 @@
-/**
+﻿/**
 @brief    メディアバッファ  
 @file     WinMediaBuffer.cpp
 @version  0.9

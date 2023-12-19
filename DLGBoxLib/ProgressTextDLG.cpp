@@ -1,4 +1,4 @@
-//
+﻿//
 // ProgressTextDLG.cpp : インプリメンテーション ファイル
 //
 

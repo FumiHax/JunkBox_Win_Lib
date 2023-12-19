@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /*
 一般のマイク用オーディオツール

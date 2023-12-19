@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /**
 拡張  ビュー，フレーム，ドキュメント管理ライブラリ

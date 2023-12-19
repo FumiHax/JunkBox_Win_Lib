@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 //
 // ProgressTextDLG.h : ヘッダー ファイル

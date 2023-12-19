@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /**
  MFCLib 用入出力関数

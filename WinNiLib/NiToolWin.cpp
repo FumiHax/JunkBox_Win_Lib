@@ -1,4 +1,4 @@
-
+﻿
 #include  "Gdata.h"
 #include  "NiToolWin.h"
 

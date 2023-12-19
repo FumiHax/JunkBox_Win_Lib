@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /**
 @brief    オーディオストリーム ヘッダ  

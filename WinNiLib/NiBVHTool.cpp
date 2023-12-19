@@ -1,4 +1,4 @@
-
+﻿
 #include "NiBVHTool.h"
 
 using namespace jbxl;

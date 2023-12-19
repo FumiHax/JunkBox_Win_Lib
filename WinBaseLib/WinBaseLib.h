@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /**
 Windows用基本グラフィックライブラリ 

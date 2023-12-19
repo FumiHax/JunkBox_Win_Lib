@@ -1,4 +1,4 @@
-// DxPolygonView.cpp : 実装ファイル
+﻿// DxPolygonView.cpp : 実装ファイル
 //
 
 #include "..\stdafx.h"

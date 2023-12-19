@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /**
 OpenGL Extension Wrangler Library

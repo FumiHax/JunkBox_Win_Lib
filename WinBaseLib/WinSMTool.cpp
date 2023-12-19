@@ -1,4 +1,4 @@
-
+﻿
 #include "WinSMTool.h"
 #include "WinTools.h"
 

@@ -1,4 +1,4 @@
-//
+﻿//
 // LogWndView.cpp : CLogWndView クラスの実装
 //
 

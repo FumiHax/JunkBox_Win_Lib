@@ -1,4 +1,4 @@
-/**
+﻿/**
 @brief    オーディオストリーム 
 @file     WinAudioStream.cpp
 @version  0.9

@@ -1,4 +1,4 @@
-//
+﻿//
 // InputNumDLG.cpp : 実装ファイル
 //
 

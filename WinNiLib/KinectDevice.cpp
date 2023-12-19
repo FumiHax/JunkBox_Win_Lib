@@ -1,4 +1,4 @@
-
+﻿
 #include  "WinBaseLib.h"
 #include  "KinectDevice.h"
 #include  "NiDevice.h"

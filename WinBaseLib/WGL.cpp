@@ -1,4 +1,4 @@
-/**
+﻿/**
 	OpenGL Extension Wrangler Library
 
 */

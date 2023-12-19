@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /**
 ExSMPLDisp.h : ヘッダー ファイル

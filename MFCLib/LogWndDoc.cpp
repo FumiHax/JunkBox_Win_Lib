@@ -1,4 +1,4 @@
-//
+﻿//
 // LogWndDoc.cpp : CLogWndDoc クラスの実装
 //
 

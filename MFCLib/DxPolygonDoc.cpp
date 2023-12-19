@@ -1,4 +1,4 @@
-//
+﻿//
 // DxPolygonDoc.cpp : 実装ファイル
 //
 

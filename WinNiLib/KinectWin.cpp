@@ -1,4 +1,4 @@
-
+﻿
 #include  "WinBaseLib.h"
 #include  "KinectWin.h"
 #include  "NiJointsTool.h"

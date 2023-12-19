@@ -1,4 +1,4 @@
-//
+﻿//
 // vThumbNailFrame.cpp : インプリメンテーション ファイル
 //
 
