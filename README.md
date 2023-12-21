@@ -6,10 +6,15 @@ C++ Static Library for MS Windows
 git clone https://github.com/JunkBox-Library/JunkBox_Win_Lib.git
 ```
 
-## JunkBox_Lib++ is required
+## [JunkBox_Lib++](https://github.com/JunkBox-Library/JunkBox_Libpp) is required
 ```
 git clone https://github.com/JunkBox-Library/JunkBox_Libpp.git JunkBox_Lib++
 ```
+
+## Needed External Tool
+### Visual Studio Comminity 2022 (C++, MFC)
+* MFC is needed for **JunkBox_Win_Lib** later.
+   * https://visualstudio.microsoft.com/en-us/vs/community/
 
 ## Needed External SDK
 ### DX9 SDK
