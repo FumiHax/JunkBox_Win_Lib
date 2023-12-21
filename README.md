@@ -1,5 +1,5 @@
 # JunkBox_Win_Lib
-C++ Library for MS Windows
+C++ Static Library for MS Windows
 
 ### DX9 SDK
 * **directx_Jun2010_redist.exe**
