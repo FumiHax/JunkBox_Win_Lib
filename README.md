@@ -11,7 +11,7 @@ git clone https://github.com/JunkBox-Library/JunkBox_Win_Lib.git
 git clone https://github.com/JunkBox-Library/JunkBox_Libpp.git JunkBox_Lib++
 ```
 
-## Needed External Tool/SDK
+## Needed external Tool/SDK
 ### Visual Studio Comminity 2022 (C++, MFC)
 * MFC is needed for **JunkBox_Win_Lib** later.
    * https://visualstudio.microsoft.com/en-us/vs/community/
