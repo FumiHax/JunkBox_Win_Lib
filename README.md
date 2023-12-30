@@ -19,6 +19,7 @@ git clone https://github.com/JunkBox-Library/JunkBox_Libpp.git JunkBox_Lib++
 * **directx_Jun2010_redist.exe**
    * https://www.microsoft.com/en-us/download/details.aspx?id=8109
 
-## Doxygen 
-* https://polaris.star-dust.jp/doxygen/JunkBox_Win_Lib/
+## Documents
+* [Wiki](https://polaris.star-dust.jp/pukiwiki/?JunkBox_Win_Lib)
+* [Doxygen](https://polaris.star-dust.jp/doxygen/JunkBox_Win_Lib/)
 
