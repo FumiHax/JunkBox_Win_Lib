@@ -1,0 +1,8 @@
+.vs
+Debug
+Debug64
+Release
+Release64
+WinLib.aps
+*.sln
+*.user
