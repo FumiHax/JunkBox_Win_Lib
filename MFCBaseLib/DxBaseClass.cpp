@@ -43,7 +43,6 @@ CDxBaseView::~CDxBaseView()
 }
 
 
-
 /**
     機能：  DirectX9のデバイスを作る．
     引数： int cxs, cys ウィンドウの初期サイズ，省略した場合は画像データ(cmnHead)に合わせられる．
@@ -177,7 +176,6 @@ void  CDxBaseView::OnActivateView(BOOL bActivate, CView* pActivateView, CView* p
 
 
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // CDxVTXBaseView クラス
 //
@@ -232,7 +230,6 @@ void  CDxVTXBaseView::SwitchRotation()
     }
     angleX = angleY = angleZ = 0.0;
 }
-
 
 
 /**
@@ -371,4 +368,3 @@ HRESULT  jbxwl::ResetDx9Device(LPDIRECT3DDEVICE9 lpD3DDevice, D3DPRESENT_PARAMET
     }
     return hr;  
 }
-

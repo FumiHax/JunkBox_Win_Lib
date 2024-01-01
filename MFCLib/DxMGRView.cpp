@@ -302,7 +302,6 @@ void CDxMGRView::OnInitialUpdate()
         return;
     }
 
-
     //
     SetWindowSize(viewData.xsize, viewData.ysize);
     return;
@@ -578,7 +577,6 @@ BOOL CDxMGRView::SetNewSurface(int dummy)
 }
 
 
-
 void  CDxMGRView::ExecRender()
 {
     HRESULT  hr;
@@ -614,7 +612,6 @@ void  CDxMGRView::ExecRender()
         else  ExecRender();
     }
 }
-
 
 
 void  CDxMGRView::InitObject()
@@ -668,7 +665,6 @@ void  CDxMGRView::InitObject()
 }
 
 
-
 void  CDxMGRView::MakeSetTitle()
 {
     Title = pDoc->preTitle + pDoc->Title + pDoc->pstTitle;
@@ -688,4 +684,3 @@ void  CDxMGRView::MakeSetTitle()
     }
     this->SetTitle(Title);
 }
-

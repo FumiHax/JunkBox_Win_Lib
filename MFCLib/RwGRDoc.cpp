@@ -32,11 +32,9 @@ CRwGRDoc::CRwGRDoc()
 }
 
 
-
 CRwGRDoc::~CRwGRDoc()
 {
 }
-
 
 
 BEGIN_MESSAGE_MAP(CRwGRDoc, CExDocument)
@@ -44,7 +42,6 @@ BEGIN_MESSAGE_MAP(CRwGRDoc, CExDocument)
         // メモ - ClassWizard はこの位置にマッピング用のマクロを追加または削除します．
     //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
-
 
 
 
@@ -67,7 +64,6 @@ void CRwGRDoc::Dump(CDumpContext& dc) const
 
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 // CRwGRDoc シリアライズ
 //
@@ -85,15 +81,14 @@ void CRwGRDoc::Serialize(CArchive& ar)
 
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 // CRwGRDoc コマンド
 //
 BOOL  CRwGRDoc::ReadDataFile(LPCTSTR fname)
 {
     CString message = _T("");
-    CString fnm = get_file_name_t(fname);   // ファイル名のみ
-    CString err_fname = _T("");             // エラーを起こしたファイル名
+    CString fnm = get_file_name_t(fname);       // ファイル名のみ
+    CString err_fname = _T("");                 // エラーを起こしたファイル名
     CmnHead hd;
 
     // グローバルカウンタの設定
@@ -225,7 +220,6 @@ BOOL  CRwGRDoc::ReadDataFile(LPCTSTR fname)
 }
 
 
-
 //
 // hasViewData==TRUE なら MakeViewData()は実行されない．
 //
@@ -320,5 +314,3 @@ CmnHead CRwGRDoc::TranslateData()
     
     return chd;
 }
-
-

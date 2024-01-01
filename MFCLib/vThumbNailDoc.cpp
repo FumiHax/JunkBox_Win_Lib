@@ -23,12 +23,10 @@ using namespace jbxwl;
 
 IMPLEMENT_DYNCREATE(CvThumbNailDoc, CExDocument)
 
-
 CvThumbNailDoc::CvThumbNailDoc()
 {
     SetSize(THUMBNAIL_SIZE, THUMBNAIL_SIZE, 4, 2, 4, 12);
 }
-
 
 
 CvThumbNailDoc::~CvThumbNailDoc()
@@ -64,7 +62,6 @@ void CvThumbNailDoc::Dump(CDumpContext& dc) const
 
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 // CvThumbNailDoc シリアライズ
 
@@ -79,7 +76,6 @@ void CvThumbNailDoc::Serialize(CArchive& ar)
         // TODO: この位置に読み込み用のコードを追加してください
     }
 }
-
 
 
 
@@ -195,7 +191,6 @@ CmnHead  CvThumbNailDoc::TranslateData()
 }
 
 
-
 /**
     txs  サムネイルの Xサイズ（ピクセル）
     tys  サムネイルの Yサイズ（ピクセル）
@@ -220,7 +215,6 @@ void  CvThumbNailDoc::SetSize(int txs, int tys, int bds, int hrs, int vrs, int y
 }
 
 
-
 int   CvThumbNailDoc::GetTNailNum(POINT pt)
 {
     int xx  = pt.x/(xTNailSize+ tNailBorder) + 1;  
@@ -230,5 +224,3 @@ int   CvThumbNailDoc::GetTNailNum(POINT pt)
     if (ret<0 || ret>msGraph.zs) ret = -1;
     return ret;
 }
-
-

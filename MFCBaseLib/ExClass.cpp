@@ -104,7 +104,6 @@ int  jbxwl::ExecDocFrmView(CExFrame* pfrm, LPCTSTR fname)
         delete pfrm;    // Debug構成でコンパイルすると，CDxSRenderViewで頂点数0の場合，ここでセグメンテーションエラーを起こす？ 
         return ret;
     }
-
     pfrm->ShowWindow(SW_SHOW);
     pfrm->SetFocus();
     pfrm->pView->SetFocus();

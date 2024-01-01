@@ -35,13 +35,11 @@ CDx2DView::~CDx2DView()
 }
 
 
-
 BEGIN_MESSAGE_MAP(CDx2DView, CDxBaseView)
     //{{AFX_MSG_MAP(CDx2DView)
         // メモ - ClassWizard はこの位置にマッピング用のマクロを追加または削除します．
     //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
-
 
 
 
@@ -73,7 +71,6 @@ void CDx2DView::Dump(CDumpContext& dc) const
     CDxBaseView::Dump(dc);
 }
 #endif //_DEBUG
-
 
 
 
@@ -124,7 +121,6 @@ void  CDx2DView::OnInitialUpdate()
     SetWindowSize(origXSize, origYSize);
     return;
 }
-
 
 
 void CDx2DView::ExecRender()
@@ -187,5 +183,3 @@ void  CDx2DView::InitObject()
         return;
     }
 }
-
-

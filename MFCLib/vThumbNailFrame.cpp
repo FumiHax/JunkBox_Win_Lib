@@ -60,15 +60,14 @@ void  CvThumbNailFrame::onLButtonDBLClick()
         colorMode = pDoc->colorMode & GRAPH_COLOR_MASK;
 
         // Plane毎に色が分かれている場合は Plane（8bit）毎に表示
-        if (pDoc->colorMode & GRAPH_COLOR_USE_PLANE) colorMode = GRAPH_COLOR_MONO;
-
-        /*
+        //if (pDoc->colorMode & GRAPH_COLOR_USE_PLANE)  colorMode = GRAPH_COLOR_MONO;
+        /**/
         colorMode = pDoc->colorMode;
         if (colorMode==GRAPH_COLOR_RGB  || colorMode==GRAPH_COLOR_BGR  || 
             colorMode==GRAPH_COLOR_XRGB || colorMode==GRAPH_COLOR_ARGB || colorMode==GRAPH_COLOR_RGBA || 
             colorMode==GRAPH_COLOR_XBGR || colorMode==GRAPH_COLOR_ABGR || colorMode==GRAPH_COLOR_BGRA) {
             colorMode = GRAPH_COLOR_MONO;   // Plane毎に色が分かれている場合は Plane（8bit）毎に表示
-        }*/
+        }
 
         CMultiDocTemplate* ptemp = pApp->GetMultiDocTemplate(APP_TEMPL_VTHUMBNAILFRAME);
         ExecTemplate(ptemp, &pDoc->msGraph, NULL, this, n);
