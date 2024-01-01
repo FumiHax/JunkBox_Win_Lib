@@ -93,7 +93,7 @@ BOOL  CRwGRDoc::ReadDataFile(LPCTSTR fname)
 {
     CString message = _T("");
     CString fnm = get_file_name_t(fname);   // ファイル名のみ
-    CString err_fname = _T("");                     // エラーを起こしたファイル名
+    CString err_fname = _T("");             // エラーを起こしたファイル名
     CmnHead hd;
 
     // グローバルカウンタの設定
