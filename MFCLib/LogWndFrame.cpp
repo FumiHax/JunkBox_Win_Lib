@@ -84,9 +84,9 @@ int CLogWndFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 void  CLogWndFrame::OnLogCopy()
 {
     CString data = pView->getCopyData();
-    
+
     char* mbstr = ts2mbs((LPCTSTR)data); 
-    int size = (int)strlen(mbstr);
+    size_t size = strlen(mbstr);
     if (size<=0) {
         ::free(mbstr);  
         return;
@@ -98,17 +98,24 @@ void  CLogWndFrame::OnLogCopy()
     ::GlobalUnlock(hMem);
     ::free(mbstr);
 
+    // to Clipboard
     if (!OpenClipboard()) {
         ::GlobalFree(hMem);
         DEBUG_ERROR("CLogWndFrame::OnLogCopy(): ERROR: Clipboad open error!!\n");
         return;
     }
-
-    EmptyClipboard();
-    SetClipboardData(CF_TEXT, hMem);
+    if (!EmptyClipboard()) {
+        ::GlobalFree(hMem);
+        DEBUG_ERROR("CLogWndFrame::OnLogCopy(): ERROR: Clipboad empty error!!\n");
+        return;
+    }   
+    if (::SetClipboardData(CF_TEXT, hMem) == NULL) {
+        ::GlobalFree(hMem);
+        DEBUG_ERROR("CLogWndFrame::OnLogCopy(): ERROR: Clipboad set error!!\n");
+        CloseClipboard();
+        return;
+    }
     CloseClipboard();
-    ::GlobalFree(hMem);
-
     return;
 }
 

@@ -1,11 +1,9 @@
 ﻿#pragma once
 
-
 /**
 CLogWndFrame クラス
 
     CDxMGRView クラス用フレーム
-
 
 */
 

@@ -15,7 +15,6 @@ class  CLogWndDoc;
 class  CLogWndFrame;
 
 
-
 class CLogWndView : public CExTextView
 {
 protected:
@@ -75,7 +74,6 @@ public:
     int     m_copysy;
     int     m_copyey;
 
-
     void    resetScrollSize(void);
     void    setScrollPosition(CDC* pDC, CLogRingBuffer* pBR);
     void    clearViewDoc(void);
@@ -108,7 +106,5 @@ public:
 inline CLogWndDoc* CLogWndView::GetDocument() const { return reinterpret_cast<CLogWndDoc*>(m_pDocument); }
 
 #endif
-
-
 
 }       // namespace

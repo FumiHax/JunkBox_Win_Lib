@@ -396,7 +396,8 @@ void  CLogWndView::OnMouseMove(UINT nFlags, CPoint point)
 CString  CLogWndView::getCopyData(void)
 {
     CString ret = _T("");
-    if (m_copysy<0 || m_copysy>m_copyey) return ret;
+
+    if (m_copysy < 0 || m_copysy > m_copyey) return ret;
 
     CLogWndDoc* pdoc = GetDocument();
     if (!pdoc || !pdoc->ringBuffer) return ret;

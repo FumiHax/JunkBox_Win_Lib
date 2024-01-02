@@ -7,7 +7,8 @@
 #include  "LogWndView.h"
 
 
-#define  MAXBUFFERLINE 5000
+// 最大行数
+#define  MAXBUFFERLINE 10000
 
 
 //
@@ -65,7 +66,6 @@ public:
 
 protected:
     DECLARE_MESSAGE_MAP()
-
 
 public:
     CString           save_fname;
