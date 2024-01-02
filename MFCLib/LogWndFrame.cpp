@@ -109,7 +109,7 @@ void  CLogWndFrame::OnLogCopy()
         DEBUG_ERROR("CLogWndFrame::OnLogCopy(): ERROR: Clipboad empty error!!\n");
         return;
     }   
-    if (::SetClipboardData(CF_TEXT, hMem) == NULL) {
+    if (!::SetClipboardData(CF_TEXT, hMem)) {
         ::GlobalFree(hMem);
         DEBUG_ERROR("CLogWndFrame::OnLogCopy(): ERROR: Clipboad set error!!\n");
         CloseClipboard();
