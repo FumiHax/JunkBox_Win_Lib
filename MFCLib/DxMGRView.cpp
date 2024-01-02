@@ -48,7 +48,6 @@ CDxMGRView::~CDxMGRView()
 }
 
 
-
 BEGIN_MESSAGE_MAP(CDxMGRView, CDxBaseView)
     //{{AFX_MSG_MAP(CDxMGRView)
     //}}AFX_MSG_MAP
@@ -306,7 +305,6 @@ void CDxMGRView::OnInitialUpdate()
     SetWindowSize(viewData.xsize, viewData.ysize);
     return;
 }
-
 
 
 BOOL CDxMGRView::SetNewSurface(int dummy)

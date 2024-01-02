@@ -52,11 +52,9 @@ CDxSRenderView::CDxSRenderView()
 }
 
 
-
 CDxSRenderView::~CDxSRenderView()
 {
 }
-
 
 
 BEGIN_MESSAGE_MAP(CDxSRenderView, CDxVTXBaseView)
@@ -159,7 +157,6 @@ void  CDxSRenderView::OnInitialUpdate()
 
     return;
 }
-
 
 
 void  CDxSRenderView::SetState()
@@ -291,7 +288,6 @@ void  CDxSRenderView::ExecRender()
         }
     }
 }
-
 
 
 // 頂点バッファの準備
@@ -535,5 +531,3 @@ int  CDxSRenderView::GetValidVoxelNum()
     }
     return cnt;
 }
-
-

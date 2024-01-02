@@ -81,7 +81,6 @@ int CLogWndFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 }
 
 
-
 void  CLogWndFrame::OnLogCopy()
 {
     CString data = pView->getCopyData();
@@ -114,7 +113,6 @@ void  CLogWndFrame::OnLogCopy()
 }
 
 
-
 void  CLogWndFrame::OnLogSave()
 {
     if (pDoc->save_fname==_T("")) {
@@ -129,7 +127,6 @@ void  CLogWndFrame::OnLogSave()
 }
 
 
-
 void  CLogWndFrame::OnLogClear()
 {
     CString mesg, noti;
@@ -138,7 +135,6 @@ void  CLogWndFrame::OnLogClear()
     int ret = MessageBox(mesg, noti, MB_YESNO | MB_ICONQUESTION);
     if (ret==IDYES) pView->clearViewDoc();
 }
-
 
 
 
@@ -177,5 +173,3 @@ CLogWndFrame*  jbxwl::ExecLogWnd(CMultiDocTemplate* pDocTempl, LPCTSTR title, CA
 
     return pfrm;
 }
-
-

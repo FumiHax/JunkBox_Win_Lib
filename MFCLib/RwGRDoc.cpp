@@ -284,9 +284,9 @@ CmnHead CRwGRDoc::TranslateData()
 
     int mode = 0;
     if (msGraph.color==GRAPH_COLOR_MONO || msGraph.color==GRAPH_COLOR_MONO16 ||  // 表示は 8bit
-        msGraph.color==GRAPH_COLOR_RGB  || msGraph.color==GRAPH_COLOR_BGR  || 
-        msGraph.color==GRAPH_COLOR_XRGB || msGraph.color==GRAPH_COLOR_ARGB || msGraph.color==GRAPH_COLOR_RGBA ||
-        msGraph.color==GRAPH_COLOR_XBGR || msGraph.color==GRAPH_COLOR_ABGR || msGraph.color==GRAPH_COLOR_BGRA) {
+        msGraph.color==GRAPH_COLOR_RGB  || msGraph.color==GRAPH_COLOR_BGR    || 
+        msGraph.color==GRAPH_COLOR_XRGB || msGraph.color==GRAPH_COLOR_ARGB   || msGraph.color==GRAPH_COLOR_RGBA ||
+        msGraph.color==GRAPH_COLOR_XBGR || msGraph.color==GRAPH_COLOR_ABGR   || msGraph.color==GRAPH_COLOR_BGRA) {
         // 8bit/pixcel
         mode = MG2CH_OCTET;
     }

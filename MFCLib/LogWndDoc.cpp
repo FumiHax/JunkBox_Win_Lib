@@ -41,7 +41,6 @@ CLogWndDoc::CLogWndDoc()
 }
 
 
-
 CLogWndDoc::CLogWndDoc(int bufsz, BOOL binhex)
 {
     //DEBUG_INFO("CONSTRUCTOR: CLogWndDoc 2\n");
@@ -57,7 +56,6 @@ CLogWndDoc::CLogWndDoc(int bufsz, BOOL binhex)
 }
 
 
-
 CLogWndDoc::~CLogWndDoc()
 {
     DEBUG_INFO("DESTRUCTOR: CLogWndDoc: START\n");
@@ -71,7 +69,6 @@ CLogWndDoc::~CLogWndDoc()
 }
 
 
-
 void  CLogWndDoc::free(void)
 {
     if (ringBuffer!=NULL) {
@@ -81,14 +78,12 @@ void  CLogWndDoc::free(void)
 }
 
 
-
 BOOL CLogWndDoc::OnNewDocument()
 {
     //DEBUG_INFO("CLogWndDoc::OnNewDocument():\n");
     if (!CDocument::OnNewDocument()) return FALSE;
     return TRUE;
 }
-
 
 
 
@@ -106,7 +101,6 @@ void CLogWndDoc::Serialize(CArchive& ar)
         // TODO: 読み込むコードをここに追加してください．
     }
 }
-
 
 
 
@@ -128,7 +122,6 @@ void CLogWndDoc::Dump(CDumpContext& dc) const
 
 
 
-
 ///////////////////////////////////////////////////////////////////////////////
 // CLogWndDoc コマンド
 
@@ -138,7 +131,6 @@ void CLogWndDoc::DeleteContents(void)
     //DEBUG_WARN("CLogWndDoc::DeleteContents: IN\n");
     CDocument::DeleteContents();
 }
-
 
 
 CLogWndView*  CLogWndDoc::GetView(void)
@@ -151,7 +143,6 @@ CLogWndView*  CLogWndDoc::GetView(void)
     }
     return NULL;
 }
-
 
 
 void  CLogWndDoc::clear(void)
@@ -170,7 +161,6 @@ void  CLogWndDoc::clear(void)
 
     return;
 }
-
 
 
 
@@ -210,7 +200,6 @@ int   CLogWndDoc::writeLogFile(void)
 }
 
 
-
 CString  CLogWndDoc::easyGetSaveFileName(LPCTSTR title, HWND hWnd) 
 {   
     OPENFILENAME  ofn;
@@ -232,7 +221,6 @@ CString  CLogWndDoc::easyGetSaveFileName(LPCTSTR title, HWND hWnd)
 
     return str;
 }
-
 
 
 
@@ -268,7 +256,6 @@ void  CLogWndDoc::lprintBuffer(Buffer buf, int input)
 }
 
 
-
 void  CLogWndDoc::lprintString(char* msg, int input)
 {
     if (ringBuffer==NULL || pView==NULL || msg==NULL) return;
@@ -279,7 +266,6 @@ void  CLogWndDoc::lprintString(char* msg, int input)
 
     return;
 }
-
 
 
 void  CLogWndDoc::lfprintFormat(int input, char* fmt, ...)
@@ -307,7 +293,6 @@ void  CLogWndDoc::lfprintFormat(int input, char* fmt, ...)
 
     return;
 }
-
 
 
 void  CLogWndDoc::lprintFormat(char* fmt, ...)
@@ -338,7 +323,6 @@ void  CLogWndDoc::lprintFormat(char* fmt, ...)
 
 
 
-
 ///////////////////////////////////////////////////
 // Print without Lock
 
@@ -359,7 +343,6 @@ void  CLogWndDoc::printBuffer(Buffer buf, int input)
 }
 
 
-
 void  CLogWndDoc::printString(char* msg, int input)
 {
     if (ringBuffer==NULL || pView==NULL || msg==NULL) return;
@@ -370,7 +353,6 @@ void  CLogWndDoc::printString(char* msg, int input)
 
     return;
 }
-
 
 
 void  CLogWndDoc::fprintFormat(int input, char* fmt, ...)
@@ -388,7 +370,6 @@ void  CLogWndDoc::fprintFormat(int input, char* fmt, ...)
 }
 
 
-
 void  CLogWndDoc::printFormat(char* fmt, ...)
 {
     if (ringBuffer==NULL || pView==NULL || fmt==NULL) return;
@@ -402,4 +383,3 @@ void  CLogWndDoc::printFormat(char* fmt, ...)
 
     return;
 }
-

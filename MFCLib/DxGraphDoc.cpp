@@ -33,13 +33,11 @@ CDxGraphDoc::~CDxGraphDoc()
 }
 
 
-
 BEGIN_MESSAGE_MAP(CDxGraphDoc, CExDocument)
     //{{AFX_MSG_MAP(CDxGraphDoc)
         // メモ - ClassWizard はこの位置にマッピング用のマクロを追加または削除します．
     //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
-
 
 
 
@@ -61,7 +59,6 @@ void CDxGraphDoc::Dump(CDumpContext& dc) const
 
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 // CDxGraphDoc シリアライズ
 
@@ -76,7 +73,6 @@ void CDxGraphDoc::Serialize(CArchive& ar)
         // TODO: この位置に読み込み用のコードを追加してください
     }
 }
-
 
 
 
@@ -109,7 +105,6 @@ BOOL   CDxGraphDoc::ReadDataFile(LPCTSTR str)
 }
 
 
-
 BOOL  CDxGraphDoc::MakeViewData()
 {
 //  int kind = cmnHead.kind;
@@ -120,9 +115,9 @@ BOOL  CDxGraphDoc::MakeViewData()
 
         int mode = 0;
         if (msGraph.color==GRAPH_COLOR_MONO || msGraph.color==GRAPH_COLOR_MONO16 ||  // 表示は 8bit
-            msGraph.color==GRAPH_COLOR_RGB  || msGraph.color==GRAPH_COLOR_BGR  || 
-            msGraph.color==GRAPH_COLOR_XRGB || msGraph.color==GRAPH_COLOR_ARGB || msGraph.color==GRAPH_COLOR_RGBA ||
-            msGraph.color==GRAPH_COLOR_XBGR || msGraph.color==GRAPH_COLOR_ABGR || msGraph.color==GRAPH_COLOR_BGRA) {
+            msGraph.color==GRAPH_COLOR_RGB  || msGraph.color==GRAPH_COLOR_BGR    || 
+            msGraph.color==GRAPH_COLOR_XRGB || msGraph.color==GRAPH_COLOR_ARGB   || msGraph.color==GRAPH_COLOR_RGBA ||
+            msGraph.color==GRAPH_COLOR_XBGR || msGraph.color==GRAPH_COLOR_ABGR   || msGraph.color==GRAPH_COLOR_BGRA) {
             // 8bit/pixcel
             mode = MG2CH_OCTET;
         }

@@ -108,14 +108,23 @@ int  jbxwl::ExecDocFrmView(CExFrame* pfrm, LPCTSTR fname)
     pfrm->SetFocus();
     pfrm->pView->SetFocus();
 
-    // pfrm->Title が空で無いときは，各クラスの中でタイトルが設定される はず．
-    if (pfrm->Title.IsEmpty()) {
-        pfrm->pView->SetTitle(pfrm->pDoc->Title);
-        //pfrm->Title = pfrm->pView->Title = pfrm->pDoc->Title;
-        //pfrm->SetTitle(pfrm->Title);
-        //pfrm->SetWindowText(pfrm->Title);
-        //pfrm->pDoc->SetTitle(pfrm->Title);
+    // 
+    CString title = pfrm->pDoc->preTitle + pfrm->pDoc->Title + pfrm->pDoc->pstTitle;
+    if (title.IsEmpty()) {
+        pfrm->pDoc->preTitle = _T("Title: ");
+        pfrm->pDoc->Title    = _T("Temporary Blank");
+        pfrm->pDoc->pstTitle = _T("");
+        title = pfrm->pDoc->preTitle + pfrm->pDoc->Title + pfrm->pDoc->pstTitle;
     }
+    if (pfrm->preTitle.IsEmpty()) pfrm->preTitle = pfrm->pDoc->preTitle;
+    if (pfrm->Title.IsEmpty()) pfrm->Title = title;
+    if (pfrm->pView->Title.IsEmpty()) pfrm->pView->Title = title;
+    //
+    pfrm->pView->SetTitle(title);
+    pfrm->pDoc->SetTitle(title);
+    pfrm->SetTitle(title);
+    pfrm->SetWindowText(title);
+
     return 0;
 }
 

@@ -31,11 +31,9 @@ CGlProcView::CGlProcView()
 }
 
 
-
 CGlProcView::~CGlProcView()
 {
 }
-
 
 
 // GlProcView 描画
@@ -136,7 +134,6 @@ void  CGlProcView::OnSize(UINT nType, int cx, int cy)
 }
 
 
-
 int  CGlProcView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
     //DEBUG_INFO("CGlProcView::OnCreate()\n");
@@ -147,12 +144,10 @@ int  CGlProcView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 }
 
 
-
 void  CGlProcView::OnDestroy()
 {
     CGlBaseView::OnDestroy();
 }
-
 
 
 // GlProcView 診断

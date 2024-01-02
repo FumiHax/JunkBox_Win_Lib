@@ -31,7 +31,6 @@ BEGIN_MESSAGE_MAP(CDxDirectView, CDxBaseView)
 END_MESSAGE_MAP()
 
 
-
 // DxDirectView 描画
 
 void CDxDirectView::OnDraw(CDC* pDC)
@@ -40,7 +39,6 @@ void CDxDirectView::OnDraw(CDC* pDC)
 
     // TODO: 描画コードをここに追加してください．
 }
-
 
 
 // DxDirectView 診断
@@ -166,7 +164,6 @@ void CDxDirectView::OnInitialUpdate()
 }
 
 
-
 BOOL CDxDirectView::SetNewSurface(int dummy)
 {
     if (isNull(viewData.grptr)) {
@@ -274,7 +271,6 @@ BOOL CDxDirectView::SetNewSurface(int dummy)
 }
 
 
-
 void  CDxDirectView::ExecRender()
 {
     if (isNull(lpD3DDevice)) return;
@@ -308,7 +304,6 @@ void  CDxDirectView::ExecRender()
         else  ExecRender();
     }
 }
-
 
 
 void  CDxDirectView::InitObject()
@@ -360,4 +355,3 @@ void  CDxDirectView::InitObject()
     }
     return;
 }
-

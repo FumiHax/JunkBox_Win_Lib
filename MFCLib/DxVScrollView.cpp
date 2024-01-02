@@ -12,7 +12,6 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-
 using namespace jbxl;
 using namespace jbxwl;
 
@@ -51,11 +50,9 @@ CDxVScrollView::CDxVScrollView()
 }
 
 
-
 CDxVScrollView::~CDxVScrollView()
 {
 }
-
 
 
 BEGIN_MESSAGE_MAP(CDxVScrollView, CDxBaseView)
@@ -64,7 +61,6 @@ BEGIN_MESSAGE_MAP(CDxVScrollView, CDxBaseView)
     ON_WM_LBUTTONDBLCLK()
     //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
-
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -95,7 +91,6 @@ void  CDxVScrollView::Dump(CDumpContext& dc) const
     CDxBaseView::Dump(dc);
 }
 #endif //_DEBUG
-
 
 
 
@@ -248,7 +243,6 @@ void  CDxVScrollView::InitObject()
     }
     return;
 }
-
 
 
 BOOL  CDxVScrollView::SetNewSurface(int ovsbpos)

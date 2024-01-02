@@ -49,7 +49,6 @@ CLogWndView::CLogWndView()
 }
 
 
-
 CLogWndView::~CLogWndView()
 {   
     DEBUG_INFO("DESTRUCTOR: CLogWndView: START\n"); 
@@ -58,7 +57,6 @@ CLogWndView::~CLogWndView()
 
     DEBUG_INFO("DESTRUCTOR: CLogWndView: END\n");
 }
-
 
 
 BEGIN_MESSAGE_MAP(CLogWndView, CExTextView)
@@ -70,7 +68,6 @@ BEGIN_MESSAGE_MAP(CLogWndView, CExTextView)
     ON_WM_ERASEBKGND()
     ON_WM_SIZE()
 END_MESSAGE_MAP()
-
 
 
 BOOL CLogWndView::PreCreateWindow(CREATESTRUCT& cs)
@@ -92,12 +89,10 @@ BOOL CLogWndView::OnEraseBkgnd(CDC* pDC)
 }
 
 
-
 void CLogWndView::OnSize(UINT nType, int cx, int cy)
 {
     CExTextView::OnSize(nType, cx, cy);
 }
-
 
 
 void CLogWndView::OnDraw(CDC* pDC)
@@ -165,7 +160,6 @@ void CLogWndView::OnDraw(CDC* pDC)
 }
 
 
-
 void  CLogWndView::setScrollPosition(CDC* pDC, CLogRingBuffer* pRB)
 {
     int lastPos = pRB->getLastPosition();
@@ -182,7 +176,6 @@ void  CLogWndView::setScrollPosition(CDC* pDC, CLogRingBuffer* pRB)
 
     ScrollToPosition(pt);
 }
-
 
 
 void  CLogWndView::resetScrollSize()
@@ -209,7 +202,6 @@ void  CLogWndView::resetScrollSize()
 
     return;
 }
-
 
 
 void  CLogWndView::OnInitialUpdate()
@@ -239,7 +231,6 @@ void  CLogWndView::OnInitialUpdate()
 
     return;
 }
-
 
 
 void  CLogWndView::clearViewDoc()
@@ -279,7 +270,6 @@ void  CLogWndView::clearViewDoc()
 }
 
 
-
 void CLogWndView::SetTitle(LPCTSTR title) 
 {
     this->Title   = title;
@@ -290,7 +280,6 @@ void CLogWndView::SetTitle(LPCTSTR title)
 
     return;
 }
-
 
 
 #ifdef _DEBUG
@@ -320,7 +309,6 @@ CLogWndDoc* CLogWndView::GetDocument() const // デバッグ以外のバージ�
 
 
 
-
 ///////////////////////////////////////////////////////////////////////////////
 // CLogWndView メッセージ ハンドラ
 // フォントの設定
@@ -343,13 +331,11 @@ int CLogWndView::OnCreate(LPCREATESTRUCT lpcs)
 }
 
 
-
 void CLogWndView::OnDestroy(void)
 {
     m_ScreenFont.DeleteObject();
     CScrollView::OnDestroy();
 }
-
 
 
 
@@ -379,14 +365,12 @@ void  CLogWndView::OnLButtonDown(UINT nFlags, CPoint point)
 }
 
 
-
 void  CLogWndView::OnLButtonUp(UINT nFlags, CPoint point)
 {
     m_mpress = FALSE;
 
     CScrollView::OnLButtonUp(nFlags, point);
 }
-
 
 
 void  CLogWndView::OnMouseMove(UINT nFlags, CPoint point)
@@ -407,7 +391,6 @@ void  CLogWndView::OnMouseMove(UINT nFlags, CPoint point)
 
     CScrollView::OnMouseMove(nFlags, point);
 }
-
 
 
 CString  CLogWndView::getCopyData(void)
@@ -433,7 +416,6 @@ CString  CLogWndView::getCopyData(void)
 }
 
 
-
 //
 // CScrollView が 32767pixel を越える場合の対応
 //
@@ -457,4 +439,3 @@ BOOL  CLogWndView::OnScroll(UINT nScrollCode, UINT nPos, BOOL bDoScroll)
 
     return CScrollView::OnScroll(nScrollCode, nPos, bDoScroll);
 }
-
