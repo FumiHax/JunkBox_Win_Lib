@@ -1,0 +1,12 @@
+#sorry. Japanese Text only.
+#
+
+rewrite configure.ac, doxygen.conf
+working now ..... v1.4.4
+
+v1.4.4
+	fix Window Titledisappears bug.
+	fix clipboard bug at MFCLib/LogWnd***
+
+v1.4.3
+	Hello githib
