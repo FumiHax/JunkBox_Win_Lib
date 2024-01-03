@@ -29,12 +29,12 @@ bool  jbxwl::SetExLink(CExDocument* pdoc, CExFrame* pfrm, CExView* pviw, CAppCal
 
 //
 CExFrame*  jbxwl::CreateDocFrmView(CMultiDocTemplate* pDocTempl, CAppCallBack* papp)
-{   
+{
     // クラスの取得
     CExDocument* pdoc = (CExDocument*)pDocTempl->CreateNewDocument();
     CExFrame*    pfrm = (CExFrame*)pDocTempl->CreateNewFrame(pdoc, NULL);
     CExView*     pviw = (CExView*)pdoc->GetView();
-    
+
     bool rslt = SetExLink(pdoc, pfrm, pviw, papp);
     if (!rslt) {
         if (pdoc!=NULL) {
@@ -51,8 +51,8 @@ CExFrame*  jbxwl::CreateDocFrmView(CMultiDocTemplate* pDocTempl, CAppCallBack* p
         }
         return  NULL;
     }
-
     pfrm->pTempl = pDocTempl;   
+
     return pfrm;
 }
 
