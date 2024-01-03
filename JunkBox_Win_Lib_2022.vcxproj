@@ -249,9 +249,6 @@
     <None Include="res\LogWndToolbar.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="WinLib.rc" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="DLGBoxLib\DLGBoxBase.h" />
     <ClInclude Include="MFCBaseLib\DxBaseClass.h" />
     <ClInclude Include="MFCBaseLib\ExClass.h" />
@@ -315,6 +312,9 @@
     <ClInclude Include="WinBaseLib\WinDLLTool.h" />
     <ClInclude Include="WinBaseLib\WinSMTool.h" />
     <ClInclude Include="WinBaseLib\WinTools.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\WinLib.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

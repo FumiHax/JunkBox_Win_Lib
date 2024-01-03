@@ -217,11 +217,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="WinLib.rc">
-      <Filter>リソース ファイル</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="resource.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -411,5 +406,10 @@
     <ClInclude Include="WinBaseLib\Dx9.h">
       <Filter>ヘッダー ファイル\WinBaseLib</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\WinLib.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
