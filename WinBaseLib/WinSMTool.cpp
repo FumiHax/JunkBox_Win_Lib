@@ -51,19 +51,19 @@ void  CWinSharedMemory::get(int sz)
 
     // 共有メモリの内容を取得
     m_pMutex->Lock(INFINITE);
-    memcpy(buf, m_pMappingView, buf, sz);
+    memcpy(buf, m_pMappingView, sz);
     m_pMutex->Unlock();
 
-    UpdateData(FALSE);
+    //UpdateData(FALSE);
 }
 
 
 void  CWinSharedMemory::put(int sz)
 {
-    if (sz<=0 || sz>JBXWL_DEFAULT_SMSZIE) sz = strlen(buf);
+    if (sz<=0 || sz>JBXWL_DEFAULT_SMSZIE) sz = (int)strlen((const char*)buf);
     buf[sz] = 0;
 
-    UpdateData(TRUE);
+    //UpdateData(TRUE);
 
     // 共有メモリへ書き込む
     m_pMutex->Lock(INFINITE);

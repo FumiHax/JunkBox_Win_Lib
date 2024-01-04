@@ -27,8 +27,8 @@ protected:
     void*   m_pMappingView  = NULL;     // ファイルのビューへのポインタ
     CMutex* m_pMutex        = NULL;     // ミューテックスオブジェクト
 
-    void    get();
-    void    put();
+    void    get(int sz);
+    void    put(int sz);
 
 public:
     unsigned char buf[JBXWL_DEFAULT_SMSZIE + 1];
