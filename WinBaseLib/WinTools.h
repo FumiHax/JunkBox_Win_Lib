@@ -34,7 +34,6 @@ Tools for Windows ライブラリ
 #define  JBXWL_LOCALE_US  "English"
 #define  JBXWL_LOCALE_JP  "Japanese"
 
-
 // Windows メッセージ
 #define  JBXWL_WM_USER            WM_USER + 9000
 
@@ -42,8 +41,6 @@ Tools for Windows ライブラリ
 #define  JBXWL_WM_NETWORK_OPEN    JBXWL_WM_USER + 101
 #define  JBXWL_WM_NETWORK_CLOSE   JBXWL_WM_USER + 102
 #define  JBXWL_WM_SPEECH_EVENT    JBXWL_WM_USER + 110
-
-
 
 //
 namespace jbxwl {
@@ -188,19 +185,16 @@ public:
 };
 
 
-
 ///////////////////////////////////////////////////////////////////////////////
 // メッセージ Dialog
   
 int  MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type,  HWND hWnd);
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////
 //  Process/Thread
 
 void  WinSystem(char* command, DWORD flag, BOOL wait);
-
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -218,7 +212,6 @@ template <class T> inline void releaseNull(T*& ptr)
 }
 
 
-
 template <class T> inline void deleteNull(T*& ptr)
 {
     if (!jbxl::isNull(ptr)) {
@@ -229,8 +222,6 @@ template <class T> inline void deleteNull(T*& ptr)
 
 
 }       // namespace
-
-
 
 
 /*

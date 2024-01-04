@@ -33,15 +33,12 @@ Buffer  jbxwl::tc2Buffer(TCHAR* tchar, int size)
     if (err!=0) clear_Buffer(&buf);
     else buf.vldsz = (int)Min(len-1, strlen((char*)buf.buf));
     buf.state = err;
-
 #else
     copy_s2Buffer(tchar, &buf);
-
 #endif
 
     return buf;
 }
-
 
 
 Buffer  jbxwl::ts2Buffer(LPCTSTR str, int size)
@@ -56,16 +53,13 @@ Buffer  jbxwl::ts2Buffer(LPCTSTR str, int size)
     if (err!=0) clear_Buffer(&buf);
     else buf.vldsz = (int)Min(len-1, strlen((char*)buf.buf));
     buf.state = err;
-
 #else
     Buffer buf = make_Buffer(size);
     copy_b2Buffer((char*)str, &buf, size);
-
 #endif
 
     return buf;
 }
-
 
 
 CString  jbxwl::mbs2ts(char* str)
@@ -79,15 +73,12 @@ CString  jbxwl::mbs2ts(char* str)
     size_t len = 0;
     int err = mbstowcs_s(&len, tchar, LBUF, str, strlen(str));
     if (err==0) buf = tchar;
-
 #else
     buf = (LPTSTR)str;
-
 #endif
 
     return buf;
 }
-
 
 
 //
@@ -100,7 +91,6 @@ inline char*  ts2mbs(LPCTSTR str)
     return (char*)buf.buf;
 }
 */
-
 
 
 
@@ -121,15 +111,12 @@ int  jbxwl::copy_ts2Buffer(LPCTSTR str, Buffer* buf)
     copy_s2Buffer(mbstr, buf);
     ::free(mbstr);
     cc = buf->vldsz;
-
 #else
     cc = copy_s2Buffer((char*)str, buf);
-
 #endif
 
     return cc;
 }
-
 
 
 //
@@ -146,15 +133,12 @@ int  jbxwl::cat_ts2Buffer(LPCTSTR str, Buffer* buf)
     cat_s2Buffer(mbstr, buf);
     ::free(mbstr);
     cc = buf->vldsz;
-
 #else
     cc = cat_s2Buffer((char*)str, buf);
-
 #endif
 
     return cc;
 }
-
 
 
 
@@ -169,7 +153,6 @@ unsigned long int  jbxwl::file_size_t(LPCTSTR fn)
 }
 
 
-
 BOOL  jbxwl::file_exist_t(LPCTSTR fn)
 {
     BOOL ret = FALSE;
@@ -181,15 +164,12 @@ BOOL  jbxwl::file_exist_t(LPCTSTR fn)
         ret = TRUE;
         fclose(fp);
     }
-
 #else
     ret = file_exist((char*)fn);
-
 #endif
 
     return ret;
 }
-
 
 
 CString  jbxwl::get_file_name_t(LPCTSTR str)
@@ -201,16 +181,13 @@ CString  jbxwl::get_file_name_t(LPCTSTR str)
     char* fn = get_file_name(mbstr);
     buf = mbs2ts(fn);
     ::free(mbstr);
-
 #else
     char* fn = get_file_name((char*)str);
     buf = (LPTSTR)fn;
-
 #endif
 
     return buf;
 }
-
 
 
 CString  jbxwl::make_file_path_t(LPCTSTR str)
@@ -224,18 +201,15 @@ CString  jbxwl::make_file_path_t(LPCTSTR str)
     buf = mbs2ts(pn);
     ::free(mbstr);
     ::free(pn);
-
 #else
     //char* pn = make_file_path((char*)str);
     char* pn = get_file_path((char*)str);
     buf = (LPTSTR)pn;
     ::free(pn);
-
 #endif
 
     return buf;
 }
-
 
 
 CString jbxwl::cut_file_extension_t(LPCTSTR str)
@@ -248,7 +222,6 @@ CString jbxwl::cut_file_extension_t(LPCTSTR str)
     buf = mbs2ts(pn);
     ::free(mbstr);
     ::free(pn);
-
 #else
     char* pn = cut_file_extension((char*)str);
     buf = (LPTSTR)pn;
@@ -288,10 +261,8 @@ tList*  jbxwl::get_dir_files_t(LPCTSTR dirn)
 
         FindClose(hFind);
     }
-
     return lp;
 }
-
 
 
 tList*  jbxwl::get_dir_files_rcsv_t(LPCTSTR dirn)
@@ -311,7 +282,6 @@ tList*  jbxwl::get_dir_files_rcsv_t(LPCTSTR dirn)
 }
 
 
-
 tList*  jbxwl::read_index_tList_file_t(LPCTSTR fn, char cc)
 {
     char* pathstr = NULL;
@@ -322,7 +292,6 @@ tList*  jbxwl::read_index_tList_file_t(LPCTSTR fn, char cc)
 
     return lt;
 }
-
 
 
 
@@ -339,7 +308,6 @@ CString  jbxwl::numbering_name_t(LPCTSTR fmt, int n)
 }
 
 
-
 CString  jbxwl::get_tstr_param_tList(tList* lt, char* key, LPCTSTR dflt)
 {
     Buffer buf = buffer_key_tList(lt, key, 1);
@@ -350,7 +318,6 @@ CString  jbxwl::get_tstr_param_tList(tList* lt, char* key, LPCTSTR dflt)
     }
     return (CString)dflt;
 }
-
 
 
 
@@ -365,7 +332,6 @@ void  jbxwl::setResourceLocale(void)
 }
 
 
-
 void  jbxwl::setSystemLocale(LPCTSTR locale)
 {
     _tsetlocale(LC_ALL, locale);
@@ -373,13 +339,11 @@ void  jbxwl::setSystemLocale(LPCTSTR locale)
 }
 
 
-
 CString  jbxwl::getResourceLocale(void)
 {
     CString locale = LoadString_byID(IDS_STR_LOCALE);
     return locale;
 }
-
 
 
 
@@ -406,7 +370,6 @@ CString  jbxwl::GetCurrentUserHomeFolder(void)
 }
 
 
-
 CString  jbxwl::GetDefaultUserHomeFolder(void)
 {
     DWORD  size = (DWORD)LMESG;
@@ -417,7 +380,6 @@ CString  jbxwl::GetDefaultUserHomeFolder(void)
     if (rslt && size<=LMESG) ret = dirn;
     return ret;
 }
-
 
 
 CString  jbxwl::MakeWorkingFolderPath(LPCTSTR fnm, BOOL local, LPCTSTR dir, BOOL make)
@@ -441,7 +403,6 @@ CString  jbxwl::MakeWorkingFolderPath(LPCTSTR fnm, BOOL local, LPCTSTR dir, BOOL
 }
 
 
-
 CString  jbxwl::GetProgramFolder(void)
 {
     char* path = GetProgramFolderA();
@@ -451,7 +412,6 @@ CString  jbxwl::GetProgramFolder(void)
 
     return ret;
 }
-
 
 
 char*  jbxwl::GetProgramFolderA(void)
@@ -474,7 +434,6 @@ char*  jbxwl::GetProgramFolderA(void)
 }
 
 
-
 CString  jbxwl::GetCurrentFolder(void)
 {
     TCHAR   dirn[LMESG];
@@ -484,7 +443,6 @@ CString  jbxwl::GetCurrentFolder(void)
     CString folder = dirn;
     return folder;
 }
-
 
 
 
@@ -500,7 +458,6 @@ void  jbxwl::SendWinMessage(UINT mesg, WPARAM wparam, LPARAM lparam)
         if (wnd!=NULL) wnd->SendMessage(mesg, wparam, lparam);
     }
 }
-
 
 
 
@@ -544,7 +501,6 @@ void  jbxwl::SendKeyActionTap(WORD key1, WORD key2, WORD key3)
     SendKeyAction(key2, SENDKEY_UpAction);
     SendKeyAction(key1, SENDKEY_UpAction);
 }
-
 
 
 /**
@@ -601,7 +557,6 @@ BOOL  jbxwl::DoSystemKeyAction(LPCTSTR com, BOOL child)
 
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////
 // Mouse Cursor
 
@@ -630,7 +585,6 @@ static TCHAR* MouseCursolTable[] = {
 };
 
 
-
 TCHAR*  jbxwl::GetMouseCursorType()
 {
     CURSORINFO ci;
@@ -652,7 +606,6 @@ TCHAR*  jbxwl::GetMouseCursorType()
 
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////
 //  Time
 
@@ -665,7 +618,6 @@ unsigned short jbxwl::GetMsecondsTimer()
     unsigned short nm = tm.wSecond*(unsigned short)1000 + tm.wMilliseconds;
     return nm;
 }
-
 
 
 //  ex.)
@@ -686,7 +638,6 @@ unsigned short jbxwl::GetMsecondsLapTimer(unsigned short pm, unsigned short* nt)
     if (nt!=NULL) *nt = nm;
     return ret;
 }
-
 
 
 
@@ -714,7 +665,6 @@ void  jbxwl::WinSystem(char* command, DWORD flag, BOOL wait)
 
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////
 // EventHandler
 
@@ -733,7 +683,6 @@ EventHandler::EventHandler(BOOL manual, BOOL initial, LPCTSTR hname, LPSECURITY_
 }
 
 
-
 void  EventHandler::clear(void)
 {
     if (m_handle!=NULL) {
@@ -746,7 +695,6 @@ void  EventHandler::clear(void)
 }
 
 
-
 HANDLE  EventHandler::create(BOOL manual, BOOL initial, LPCTSTR hname, LPSECURITY_ATTRIBUTES secu)
 {
     if (m_handle!=NULL) return NULL;
@@ -754,7 +702,6 @@ HANDLE  EventHandler::create(BOOL manual, BOOL initial, LPCTSTR hname, LPSECURIT
     m_handle = CreateEvent(secu, manual, initial, hname);
     return m_handle;
 }
-
 
 
 /**
@@ -778,7 +725,6 @@ BOOL  EventHandler::wait(DWORD msec)
 }
 
 
-
 BOOL  EventHandler::wait(HANDLE handle, DWORD msec)
 {
     m_wait_err = WAIT_FAILED;
@@ -789,7 +735,6 @@ BOOL  EventHandler::wait(HANDLE handle, DWORD msec)
     if (m_wait_err!=WAIT_OBJECT_0) return FALSE;
     return TRUE;
 }
-
 
 
 
