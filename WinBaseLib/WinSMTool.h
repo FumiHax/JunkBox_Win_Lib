@@ -4,34 +4,35 @@
 #define _WIN32_WINNT _WIN32_WINNT_MAXVER
 #endif
 
-#include   <afxmt.h>
+#include  <afxmt.h>
+#include  "buffer.h"
 
 #define  JBXWL_DEFAULT_SMNAME  "JBXWL_WinSharedMemory"
-#define  JBXWL_DEFAULT_SMSZIE  2048
+#define  JBXWL_DEFAULT_SMSZIE  4096
 
 
 //
 namespace jbxwl {
 
 
-class CWinSharedMemory
+class CWinSharedMem
 {
 public:
-    CWinSharedMemory(void);
-    CWinSharedMemory(const char* name, int size = JBXWL_DEFAULT_SMSZIE);
-
-    virtual ~CWinSharedMemory(void);
+    CWinSharedMem(void);
+    CWinSharedMem(const char* name, int size = JBXWL_DEFAULT_SMSZIE);
+    virtual ~CWinSharedMem(void);
 
 protected:
-    HANDLE  m_hMapping      = NULL;     // メモリマップドファイルのハンドル
-    void*   m_pMappingView  = NULL;     // ファイルのビューへのポインタ
-    CMutex* m_pMutex        = NULL;     // ミューテックスオブジェクト
-
-    void    get(int sz);
-    void    put(int sz);
+    HANDLE  m_hMapping        = NULL;     // メモリマップドファイルのハンドル
+    HANDLE  m_hMapping_sz     = NULL;     // サイズ用メモリマップドファイルのハンドル
+    void*   m_pMappingView    = NULL;     // ファイルのビューへのポインタ
+    void*   m_pMappingView_sz = NULL;     // サイズ用ファイルのビューへのポインタ
+    CMutex* m_pMutex          = NULL;     // ミューテックスオブジェクト
 
 public:
-    unsigned char buf[JBXWL_DEFAULT_SMSZIE + 1];
+    int     get();
+    void    put(int sz);
+    Buffer* buf;
 };
 
 
