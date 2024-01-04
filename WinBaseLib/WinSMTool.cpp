@@ -27,7 +27,7 @@ CWinSharedMem::CWinSharedMem(const char* name, int size)
         // プロセス内のアドレス空間にファイルのビューをマップ
         m_pMappingView = ::MapViewOfFile(m_hMapping, FILE_MAP_ALL_ACCESS, 0, 0, size);
         // ミューテックスオブジェクトの生成
-        m_pMutex = new CMutex(FALSE, mbs2ts((char*)name) + mbs2ts("_mutex"));
+        m_pMutex = new CMutex((BOOL)FALSE, (LPCTSTR)(mbs2ts((char*)name) + mbs2ts("_mutex")));
     }
 
     // サイズ用 4byte
@@ -65,13 +65,11 @@ int  CWinSharedMem::get()
     int sz, cc;
 
     m_pMutex->Lock(INFINITE);
-    {
-        memcpy(&sz, m_pMappingView_sz, 4);
-        if (sz > 0) {
-            copy_b2Buffer(m_pMappingView, buf, sz);
-            cc = 0;
-            memcpy(m_pMappingView_sz, &cc, 4);
-        }
+    memcpy(&sz, m_pMappingView_sz, 4);
+    if (sz > 0) {
+        copy_b2Buffer(m_pMappingView, buf, sz);
+        cc = 0;
+        memcpy(m_pMappingView_sz, &cc, 4);
     }
     m_pMutex->Unlock();
 
@@ -86,12 +84,10 @@ void  CWinSharedMem::put(int sz)
     if (sz<=0 || sz>JBXWL_DEFAULT_SMSZIE) sz = (int)strlen((const char*)buf) + 1;
 
     m_pMutex->Lock(INFINITE);
-    {
-        memcpy(&seeksz, m_pMappingView_sz, 4);
-        memcpy(((unsigned char*)m_pMappingView + seeksz), buf->buf, buf->vldsz);
-        sz += seeksz;
-        memcpy(m_pMappingView_sz, &sz, 4);
-    }
+    memcpy(&seeksz, m_pMappingView_sz, 4);
+    memcpy(((unsigned char*)m_pMappingView + seeksz), buf->buf, buf->vldsz);
+    sz += seeksz;
+    memcpy(m_pMappingView_sz, &sz, 4);
     m_pMutex->Unlock();
 
     return;
