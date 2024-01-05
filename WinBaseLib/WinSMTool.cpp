@@ -80,20 +80,37 @@ int  CWinSharedMem::get()
 
 
 // 共有メモリへ書き込む
-void  CWinSharedMem::put(int sz)
+void  CWinSharedMem::put()
 {
     int seeksz = 0;
-    if (sz<=0 || sz>JBXWL_DEFAULT_SMSZIE) sz = (int)strlen((const char*)buf) + 1;
 
     m_pMutex->Lock(INFINITE);
     {
         memcpy(&seeksz, m_pMappingView_sz, 4);
         memcpy(((unsigned char*)m_pMappingView + seeksz), buf->buf, buf->vldsz);
-        sz += seeksz;
-        memcpy(m_pMappingView_sz, &sz, 4);
+        seeksz += buf->vldsz;
+        memcpy(m_pMappingView_sz, &seeksz, 4);
     }
     m_pMutex->Unlock();
 
     return;
 }
 
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+CWinSharedMem* jbxwl::_Debug_SHM = NULL;
+
+
+void  jbxwl::open_shm_debuger(void)
+{
+    jbxwl::_Debug_SHM = new CWinSharedMem("jbxwl_SHM_DEBUGGER");
+}
+
+
+void  jbxwl::close_shm_debuger(void)
+{
+    if (jbxwl::_Debug_SHM != NULL) delete(jbxwl::_Debug_SHM);
+    jbxwl::_Debug_SHM = NULL;
+}

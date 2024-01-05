@@ -32,9 +32,22 @@ protected:
 
 public:
     int     get();
-    void    put(int sz);
+    void    put();
     Buffer* buf;
 };
+
+
+
+/// <summary>
+/// ////////////////////////////////////////////////////////////
+/// 
+/// </summary>
+extern CWinSharedMem* _Debug_SHM;
+
+void  open_shm_debuger(void);
+void  close_shm_debuger(void);
+
+
 
 
 }       // namespace

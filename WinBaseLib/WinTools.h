@@ -5,8 +5,6 @@ Tools for Windows ライブラリ
 
 */
 
-//#include "tools.h"
-
 #ifdef WIN32
 #pragma warning(disable:4005)
 #pragma warning(disable:4996)
