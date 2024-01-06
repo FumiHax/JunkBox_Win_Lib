@@ -94,7 +94,6 @@ Buffer  sjis_to_utf8_byStr(CString str);
 Buffer  sjis_to_utf8(void* ptr, size_t len);
 
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  User
 //
@@ -114,6 +113,10 @@ CString GetCurrentFolder(void);
 // 自ウィンドウにメッセージを送る．
 void  SendWinMessage(UINT mesg, WPARAM wparam=NULL, LPARAM lparam=NULL);
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Dialog
+
 // メッセージ Dialog
 int  MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type, HWND hWnd);
 
@@ -121,7 +124,7 @@ int  MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type, HWND hWnd);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Clipboard
 //
-void  SaveStringToClipboard(CString data);
+void  SaveToClipboard_byStr(CString data);
 void  SaveToClipboard(void* ptr, size_t len);
 
 

@@ -549,6 +549,10 @@ void  jbxwl::SendWinMessage(UINT mesg, WPARAM wparam, LPARAM lparam)
 }
 
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Dialog
+
 // メッセージ Dialog
 int  jbxwl::MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type, HWND hWnd)
 {
@@ -561,7 +565,7 @@ int  jbxwl::MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type, HWND hWnd)
 ///////////////////////////////////////////////////////////////////////////////
 // Clipboard
 
-void  jbxwl::SaveStringToClipboard(CString data)
+void  jbxwl::SaveToClipboard_byStr(CString data)
 {
     if (data.IsEmpty()) return;
 
