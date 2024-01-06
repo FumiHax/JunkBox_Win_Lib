@@ -10,13 +10,11 @@
 #pragma warning(disable:4996)
 #endif
 
-
 #include  "ExView.h"
 #include  "ExDocument.h"
 #include  "ExFrame.h"
 #include  "ExTextView.h"
 #include  "ExTextFrame.h"
-
 
 #define    MSG_DEFAULT_WINDOW_SIZE     512
 
@@ -26,7 +24,6 @@
 #define    MSG_DFV_ERR_READ            10
 #define    MSG_DFV_UNVISIBLE           11
 #define    MSG_DFV_FAIL_VIEW           12
-
 
 
 //
@@ -40,7 +37,6 @@ class   CExView;
 class   CExScrollTextView;
 class   CExFrame;
 class   CExToolBar;
-
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -70,10 +66,8 @@ public:
 };
 
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-
 int   ExecTemplate(CMultiDocTemplate* ptemp, ExMSGraph<sWord>* pmsGraph=NULL, ExCmnHead* pcmnHead=NULL, CExFrame* prntFrm=NULL, int vPoint=0);
 
 CExFrame*  CreateDocFrmView(CMultiDocTemplate* pDocTemp, CAppCallBack* papp=NULL);
@@ -87,10 +81,17 @@ BOOL  InitialDocView(CExFrame* pfrm, LPCTSTR fname);
 // 各オブジェクト間の関連付け
 bool  SetExLink(CExDocument* pdoc, CExFrame* pfrm, CExView* pview, CAppCallBack* papp);
 
+
 //
-CString  EasyGetOpenFileName(LPCTSTR title=NULL, HWND hWnd=NULL); 
+#ifdef _UNICODE
+CString  EasyGetOpenFileName(LPCWSTR title = NULL, HWND hWnd = NULL);
+CString  EasyGetSaveFileName(LPCWSTR title = NULL, LPCWSTR extnt = NULL, HWND hWnd = NULL);
+CString  EasyGetSaveFolderName(LPCWSTR folder = _T(""), LPCWSTR title = NULL, HWND hWnd = NULL);
+#else
+CString  EasyGetOpenFileName(LPCTSTR title=NULL, HWND hWnd=NULL);
 CString  EasyGetSaveFileName(LPCTSTR title=NULL, LPCTSTR extnt=NULL, HWND hWnd=NULL);
 CString  EasyGetSaveFolderName(LPCTSTR folder=_T(""), LPCTSTR title=NULL, HWND hWnd=NULL);
+#endif
 
 int CALLBACK EasyGetSaveFolderNameCallBack(HWND hwnd, UINT uMsg, LPARAM lParam, LPARAM lpData);
 

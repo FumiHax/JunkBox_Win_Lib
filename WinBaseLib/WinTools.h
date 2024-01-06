@@ -47,10 +47,11 @@ namespace jbxwl {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Unicode
 
-// 変換   
+// 変換 
 ///     locale が正しくないと，日本語の変換は失敗する． ex.) setlocale(LC_CTYPE,"jpn") or setSystemLocale()
 Buffer  tc2Buffer(TCHAR*  tchar, int size=-1);
 Buffer  ts2Buffer(LPCTSTR str,   int size=-1);
+Buffer  String2Buffer(CString str);
 
 CString      mbs2ts(char*   str);
 inline char* ts2mbs(LPCTSTR str)  // 要 free. NULL は絶対に返ってこない
@@ -86,10 +87,17 @@ void    setResourceLocale(void);    // リソース IDS_STR_LOCALE が示すロ�
 CString getResourceLocale(void);    // リソース IDS_STR_LOCALE が示すロケールを返す．
 void    setSystemLocale(LPCTSTR locale=_T(""));     // システムのロケールを設定する．
 
+// utf-8/sjis
+Buffer  utf8_to_sjis_byStr(CString str);
+Buffer  utf8_to_sjis(void* ptr, size_t len);
+Buffer  sjis_to_utf8_byStr(CString str);
+Buffer  sjis_to_utf8(void* ptr, size_t len);
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  User
-
+//
 CString GetCurrentUserHomeFolder(void);
 CString GetDefaultUserHomeFolder(void);
 CString MakeWorkingFolderPath(LPCTSTR fnm, BOOL local, LPCTSTR dir=NULL, BOOL make=FALSE);
@@ -105,6 +113,16 @@ CString GetCurrentFolder(void);
 
 // 自ウィンドウにメッセージを送る．
 void  SendWinMessage(UINT mesg, WPARAM wparam=NULL, LPARAM lparam=NULL);
+
+// メッセージ Dialog
+int  MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type, HWND hWnd);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Clipboard
+//
+void  SaveStringToClipboard(CString data);
+void  SaveToClipboard(void* ptr, size_t len);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,11 +200,6 @@ public:
     BOOL    wait(HANDLE handle, DWORD msec=INFINITE);
 };
 
-
-///////////////////////////////////////////////////////////////////////////////
-// メッセージ Dialog
-  
-int  MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type,  HWND hWnd);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////

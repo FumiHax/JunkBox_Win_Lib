@@ -10,9 +10,11 @@ using namespace jbxwl;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 
-//
-//  各オブジェクト間の関連付け
-//
+/**
+bool  jbxwl::SetExLink(CExDocument* pdoc, CExFrame* pfrm, CExView* pviw, CAppCallBack* papp)
+
+各オブジェクト間の関連付けを行う．
+*/
 bool  jbxwl::SetExLink(CExDocument* pdoc, CExFrame* pfrm, CExView* pviw, CAppCallBack* papp)
 {
     if (pdoc==NULL) return  false;
@@ -27,7 +29,12 @@ bool  jbxwl::SetExLink(CExDocument* pdoc, CExFrame* pfrm, CExView* pviw, CAppCal
 }
 
 
-//
+/**
+CExFrame*  jbxwl::CreateDocFrmView(CMultiDocTemplate* pDocTempl, CAppCallBack* papp)
+
+Document, Frame, View の組み合わせを作成する．
+
+*/
 CExFrame*  jbxwl::CreateDocFrmView(CMultiDocTemplate* pDocTempl, CAppCallBack* papp)
 {
     // クラスの取得
@@ -57,10 +64,12 @@ CExFrame*  jbxwl::CreateDocFrmView(CMultiDocTemplate* pDocTempl, CAppCallBack* p
 }
 
 
-//
-//  Document, View クラスの前処理
-//      ファイルをオープンし，表示の準備をする．
-//
+/**
+BOOL  jbxwl::InitialDocView(CExFrame* pfrm, LPCTSTR fname)
+
+Document, View クラスの前処理．@n
+ファイルをオープンし，表示の準備をする．
+*/
 BOOL  jbxwl::InitialDocView(CExFrame* pfrm, LPCTSTR fname)
 {
     BOOL  rslt;
@@ -81,10 +90,12 @@ BOOL  jbxwl::InitialDocView(CExFrame* pfrm, LPCTSTR fname)
 }
 
 
-//
-//  フレームに関連付けれたクラスを使用して，データ読み込み，表示を行う．
-//  データの読み込みには InitialDocView() を使用する
-//
+/**
+int  jbxwl::ExecDocFrmView(CExFrame* pfrm, LPCTSTR fname)
+
+フレームに関連付けれたクラスを使用して，データ読み込み，表示を行う．@n
+データの読み込みには InitialDocView() を使用する
+*/
 int  jbxwl::ExecDocFrmView(CExFrame* pfrm, LPCTSTR fname)
 {
     if (pfrm ==NULL) return 1;
@@ -129,7 +140,11 @@ int  jbxwl::ExecDocFrmView(CExFrame* pfrm, LPCTSTR fname)
 }
 
 
-//
+/**
+void  jbxwl::ExecDocFrmViewError(HWND hwnd, int ret)
+
+jbxwl::ExecDocFrmView() のエラーを処理する．
+*/
 void  jbxwl::ExecDocFrmViewError(HWND hwnd, int ret)
 {
     if (ret>0) {  // !=MSG_DFV_NOT_DISP (-1)
@@ -162,14 +177,12 @@ void  jbxwl::ExecDocFrmViewError(HWND hwnd, int ret)
 }
 
 
-
 /**
 int  jbxwl::ExecTemplate(CMultiDocTemplate* ptemp, ExMSGraph<sWord>* pmsGraph, ExCmnHead* pcmnHead, CExFrame* prntFrm, int viewPoint)
 
-    テンプレートを起動する．
-
-        渡すデータに対してメモリ管理機能あり．
-        メモリ管理していないデータを渡した場合は，クリアされる．
+テンプレートを起動する．@n
+渡すデータに対してメモリ管理機能あり．@n
+メモリ管理していないデータを渡した場合は，クリアされる．
 */
 int  jbxwl::ExecTemplate(CMultiDocTemplate* ptemp, ExMSGraph<sWord>* pmsGraph, ExCmnHead* pcmnHead, CExFrame* prntFrm, int viewPoint)
 {
@@ -239,72 +252,104 @@ int  jbxwl::ExecTemplate(CMultiDocTemplate* ptemp, ExMSGraph<sWord>* pmsGraph, E
 }
 
 
-//
-CString  jbxwl::EasyGetOpenFileName(LPCTSTR title, HWND hWnd) 
-{   
+/**
+CString  jbxwl::EasyGetOpenFileName(LPCWSTR title, HWND hWnd) : UNICODE用
+CString  jbxwl::EasyGetOpenFileName(LPCTSTR title, HWND hWnd) : マルチバイト用
+
+読み込み用ファイル名を得るためのダイアログを表示する．
+
+@param title : ダイアログのタイトル．
+@param hWnd  : ウィンドウハンドル
+@retval CString : ファイルへのパス
+*/
+
+#ifdef _UNICODE
+CString  jbxwl::EasyGetOpenFileName(LPCWSTR title, HWND hWnd)
+{
+    WCHAR fn[LPATH];
+#else
+CString  jbxwl::EasyGetOpenFileName(LPCTSTR title, HWND hWnd)
+{
+    TCHAR fn[LPATH];
+#endif
     OPENFILENAME ofn;
-    TCHAR fn[LMESG];
-    CString  str = _T(""); 
 
-    memset(fn, 0, LMESG);
-    memset(&ofn, 0, sizeof(OPENFILENAME));
+    bzero(fn, sizeof(fn));
+    bzero(&ofn, sizeof(ofn));
 
-    ofn.lStructSize = sizeof(OPENFILENAME);
-    ofn.hwndOwner  = hWnd;
-    ofn.Flags      = OFN_HIDEREADONLY;
-    ofn.lpstrFile  = fn;
-    ofn.nMaxFile   = LMESG;
-    ofn.lpstrTitle = title;
+    ofn.lStructSize = sizeof(ofn);
+    ofn.hwndOwner = hWnd;
+    ofn.Flags = OFN_HIDEREADONLY;
+    ofn.lpstrFile = fn;
+    ofn.nMaxFile = LPATH;
+    if (title != NULL) ofn.lpstrTitle = title;
 
-    //DEBUG_INFO("jbxwl::EasyGetOpenFileName(): GetOpenFileName() Start => %d\n", GetMsecondsTimer());
-    BOOL ret = GetOpenFileName(&ofn);
-    //DEBUG_INFO("jbxwl::EasyGetOpenFileName(): GetOpenFileName() End   => %d\n", GetMsecondsTimer());
-    if (ret) str = fn;
-
-    return str;
+    GetOpenFileName(&ofn);
+    return fn;
 }
 
 
-//
-CString  jbxwl::EasyGetSaveFileName(LPCTSTR title, LPCTSTR extnt, HWND hWnd) 
-{   
-    OPENFILENAME ofn;
-    TCHAR fn[LNAME];
-    CString  str = _T(""); 
+/**
+CString  jbxwl::EasyGetSaveFileName(LPCWSTR title, LPCWSTR extnt, HWND hWnd) : UNICODE用
+CString  jbxwl::EasyGetSaveFileName(LPCTSTR title, LPCTSTR extnt, HWND hWnd) : マルチバイト用
 
-    memset(fn, 0, LNAME);
-    memset(&ofn, 0, sizeof(OPENFILENAME));
+保存用ファイル名を得るためのダイアログを表示する．
 
-    ofn.lStructSize = sizeof(OPENFILENAME);
+@param title : ダイアログのタイトル．
+@param extnt : 保存用ファイルの拡張子
+@param hWnd  : ウィンドウハンドル
+@retval CString : ファイルへのパス
+*/
+#ifdef _UNICODE
+CString  jbxwl::EasyGetSaveFileName(LPCWSTR title, LPCWSTR extnt, HWND hWnd)
+{
+    WCHAR fn[LPATH];
+#else    
+CString  jbxwl::EasyGetSaveFileName(LPCTSTR title, LPCTSTR extnt, HWND hWnd)
+{
+    TCHAR fn[LPATH];
+#endif
+    OPENFILENAME  ofn;
+
+    bzero(fn, sizeof(fn));
+    bzero(&ofn, sizeof(ofn));
+
+    ofn.lStructSize = sizeof(ofn);
     ofn.hwndOwner = hWnd;
     ofn.Flags = 0;
     ofn.lpstrFile = fn;
-    ofn.nMaxFile  = LNAME;
+    ofn.nMaxFile = LPATH;
     ofn.lpstrDefExt = extnt;
-    ofn.lpstrTitle  = title;
+    if (title != NULL) ofn.lpstrTitle = title;
 
-    BOOL ret = GetSaveFileName(&ofn);
-    if (ret) str = fn;
-
-    return str;
+    GetSaveFileName(&ofn);
+    return fn;
 }
 
 
-//
-CString  jbxwl::EasyGetSaveFolderName(LPCTSTR folder, LPCTSTR title, HWND hWnd) 
-{   
+/**
+CString  jbxwl::EasyGetSaveFolderName(LPCTSTR folder, LPCTSTR title, HWND hWnd)
+
+保存用フォルダ名を得るためのダイアログを表示する．
+
+@bug おそらく UNICODEでは動かない？
+*/
 #ifdef _UNICODE
-    BROWSEINFO   bri;
+CString  jbxwl::EasyGetSaveFolderName(LPCWSTR folder, LPCWSTR title, HWND hWnd)
+{
+    WCHAR fldr[LPATH];
 #else
-    BROWSEINFOA  bri;
+CString  jbxwl::EasyGetSaveFolderName(LPCTSTR folder, LPCTSTR title, HWND hWnd)
+{
+    TCHAR fldr[LPATH];
 #endif
+    BROWSEINFO   bri;
     LPITEMIDLIST pilst;
 
-    TCHAR fldr[LNAME];
     CString  str = _T(""); 
 
-    memset(fldr, 0, LNAME);
-    memset(&bri, 0, sizeof(bri));
+    bzero(fldr, LPATH);
+    bzero(&bri, sizeof(bri));
 
     bri.hwndOwner = hWnd;
     bri.lpszTitle = title;
@@ -324,7 +369,11 @@ CString  jbxwl::EasyGetSaveFolderName(LPCTSTR folder, LPCTSTR title, HWND hWnd)
 }
 
 
-//
+/**
+int  CALLBACK jbxwl::EasyGetSaveFolderNameCallBack(HWND hwnd, UINT uMsg, LPARAM lParam, LPARAM lpData)
+
+EasyGetSaveFolderName() 用コールバック関数．
+*/
 int  CALLBACK jbxwl::EasyGetSaveFolderNameCallBack(HWND hwnd, UINT uMsg, LPARAM lParam, LPARAM lpData)
 {
     if(uMsg==BFFM_INITIALIZED){

@@ -21,13 +21,23 @@ using namespace jbxwl;
 //      locale が正しくないと，日本語の変換は失敗する．
 //
 
+Buffer  jbxwl::String2Buffer(CString str)
+{
+    Buffer buf = make_Buffer(CStringA(str).GetLength());
+
+    copy_b2Buffer(CStringA(str).GetBuffer(), &buf, CStringA(str).GetLength());
+    return buf;
+}
+
+
+
 Buffer  jbxwl::tc2Buffer(TCHAR* tchar, int size)
 {
     if (size<0) size = LDATA;
     Buffer buf = make_Buffer(size);
 
 #ifdef _UNICODE
-    setlocale(LC_ALL, ".UTF8");
+    //setlocale(LC_ALL, ".UTF8");
 
     size_t len;
     int err = wcstombs_s(&len, (char*)buf.buf, buf.bufsz, tchar, _TRUNCATE);
@@ -48,7 +58,7 @@ Buffer  jbxwl::ts2Buffer(LPCTSTR str, int size)
     if (size<0) size = (int)tcslen(str);
 
 #ifdef _UNICODE
-    setlocale(LC_ALL, ".UTF8");
+    //setlocale(LC_ALL, ".UTF8");
 
     Buffer buf = make_Buffer((size+1)*4);
     size_t len;
@@ -72,7 +82,7 @@ CString  jbxwl::mbs2ts(char* str)
     if (str==NULL) return buf;
 
 #ifdef _UNICODE
-    setlocale(LC_ALL, ".UTF8");
+    //setlocale(LC_ALL, ".UTF8");
     TCHAR  tchar[LBUF];
     size_t len = 0;
     int err = mbstowcs_s(&len, tchar, LBUF, str, strlen(str));
@@ -97,14 +107,13 @@ inline char*  ts2mbs(LPCTSTR str)
 */
 
 
+/**
+int  jbxwl::copy_ts2Buffer(LPCTSTR str, Buffer* buf)
 
-//////////////////////////////////////////////////////////////////
-//
-
-//
-//  戻り値： 0以上  dstのバッファにコピーされた文字数．
-//              -1  srcまたは dstが NULL 
-//              -2  メモリの確保に失敗した．何も実行されなかった．
+@retval 0以上  dstのバッファにコピーされた文字数．
+@retval  -1    srcまたは dstが NULL
+@retval  -2    メモリの確保に失敗した．何も実行されなかった．
+*/
 int  jbxwl::copy_ts2Buffer(LPCTSTR str, Buffer* buf)
 {
     if (buf==NULL) return -1;
@@ -123,10 +132,13 @@ int  jbxwl::copy_ts2Buffer(LPCTSTR str, Buffer* buf)
 }
 
 
-//
-//  戻り値： 0以上  dstのバッファにコピーされた文字数．
-//              -1  srcまたは dstが NULL 
-//              -2  メモリの確保に失敗した．何も実行されなかった．
+/**
+int  jbxwl::cat_ts2Buffer(LPCTSTR str, Buffer* buf)
+
+@retval 0以上  dstのバッファにコピーされた文字数．
+@retval  -1    srcまたは dstが NULL 
+@retval  -2    メモリの確保に失敗した．何も実行されなかった．
+*/
 int  jbxwl::cat_ts2Buffer(LPCTSTR str, Buffer* buf)
 {
     if (buf==NULL) return -1;
@@ -142,6 +154,73 @@ int  jbxwl::cat_ts2Buffer(LPCTSTR str, Buffer* buf)
 #endif
 
     return cc;
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////
+// UTF-8, s-Jis
+
+
+Buffer  jbxwl::utf8_to_sjis_byStr(CString str)
+{
+    Buffer buf = init_Buffer();
+    if (str.IsEmpty()) return buf;
+
+    buf = utf8_to_sjis(CStringA(str).GetBuffer(), CStringA(str).GetLength());
+
+    return buf;
+}
+
+
+Buffer  jbxwl::utf8_to_sjis(void* ptr, size_t len)
+{
+    // utf-8 -> unicode
+    int len_unic = MultiByteToWideChar(CP_UTF8, 0, (LPCCH)ptr, len, NULL, 0);
+    wchar_t* buf_unic = new wchar_t[len_unic];
+    MultiByteToWideChar(CP_UTF8, 0, (LPCCH)ptr, len + 1, buf_unic, len_unic);
+
+    // unicode -> sjis
+    int len_sjis = WideCharToMultiByte(CP_THREAD_ACP, 0, buf_unic, -1, NULL, 0, NULL, NULL);
+    Buffer buf_sjis = make_Buffer(len_sjis);
+    WideCharToMultiByte(CP_THREAD_ACP, 0, buf_unic, len_unic, (LPSTR)buf_sjis.buf, len_sjis, NULL, NULL);
+
+    delete buf_unic;
+
+    buf_sjis.vldsz = len_sjis;
+    return buf_sjis;
+}
+
+
+
+Buffer  jbxwl::sjis_to_utf8_byStr(CString str)
+{
+    Buffer buf = init_Buffer();
+    if (str.IsEmpty()) return buf;
+
+    buf = sjis_to_utf8(CStringA(str).GetBuffer(), CStringA(str).GetLength());
+
+    return buf;
+}
+
+
+Buffer  jbxwl::sjis_to_utf8(void* ptr, size_t len)
+{
+    // sjis -> unicode
+    int len_unic = MultiByteToWideChar(CP_THREAD_ACP, 0, (LPCCH)ptr, len, NULL, 0);
+    wchar_t* buf_unic = new wchar_t[len_unic];
+    MultiByteToWideChar(CP_THREAD_ACP, 0, (LPCCH)ptr, len + 1, buf_unic, len_unic);
+
+    // unicode -> utf-8
+    int len_utf8 = WideCharToMultiByte(CP_UTF8, 0, buf_unic, -1, NULL, 0, NULL, NULL);
+    Buffer buf_utf8 = make_Buffer(len_utf8);
+    WideCharToMultiByte(CP_UTF8, 0, buf_unic, len_unic, (LPSTR)buf_utf8.buf, len_utf8, NULL, NULL);
+
+    delete buf_unic;
+
+    buf_utf8.vldsz = len_utf8;
+    return buf_utf8;
 }
 
 
@@ -470,6 +549,55 @@ void  jbxwl::SendWinMessage(UINT mesg, WPARAM wparam, LPARAM lparam)
 }
 
 
+// メッセージ Dialog
+int  jbxwl::MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type, HWND hWnd)
+{
+    int ret = ::MessageBox(hWnd, msg, ttl, type);
+    return ret;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Clipboard
+
+void  jbxwl::SaveStringToClipboard(CString data)
+{
+    if (data.IsEmpty()) return;
+
+    SaveToClipboard(CStringA(data).GetBuffer(), CStringA(data).GetLength());
+}
+
+
+void  jbxwl::SaveToClipboard(void* ptr, size_t len)
+{
+    if (ptr == NULL) return;
+
+    HGLOBAL hMem = ::GlobalAlloc(GHND, len);
+    char* pszptr = (char*)::GlobalLock(hMem);
+
+    memcpy(pszptr, ptr, len);
+    //lstrcpy(pszptr, data);
+
+    ::GlobalUnlock(hMem);
+
+    if (!OpenClipboard(NULL)) {
+        ::GlobalFree(hMem);
+        return;
+    }
+    if (!EmptyClipboard()) {
+        ::GlobalFree(hMem);
+        return;
+    }
+    if (SetClipboardData(CF_TEXT, hMem) == NULL) {
+        ::GlobalFree(hMem);
+    }
+    CloseClipboard();
+
+    return;
+}
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Key Event
@@ -617,9 +745,13 @@ TCHAR*  jbxwl::GetMouseCursorType()
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
-//  Time
+//  Timer
 
-// 1分計 0-59999ms を返す．
+/**
+unsigned short jbxwl::GetMsecondsTimer()
+
+1分計．0-59999ms を返す．
+*/
 unsigned short jbxwl::GetMsecondsTimer()
 {
     SYSTEMTIME tm;
@@ -630,11 +762,17 @@ unsigned short jbxwl::GetMsecondsTimer()
 }
 
 
-//  ex.)
-//      unsigned short ctime;
-//      frame_timer += GetMsecondsLapTimer(lap_timer, &ctime);
-//      lap_timer = ctime;
-//
+/**
+unsigned short jbxwl::GetMsecondsLapTimer(unsigned short pm, unsigned short* nt)
+
+ラップタイムを返す．
+
+@code
+    unsigned short ctime;
+    frame_timer += GetMsecondsLapTimer(lap_timer, &ctime);
+    lap_timer = ctime;
+@endcode
+*/
 unsigned short jbxwl::GetMsecondsLapTimer(unsigned short pm, unsigned short* nt)
 {
     SYSTEMTIME tm;
@@ -654,7 +792,6 @@ unsigned short jbxwl::GetMsecondsLapTimer(unsigned short pm, unsigned short* nt)
 ////////////////////////////////////////////////////////////////////////////////////////
 //  Process/Thread
 
-//
 void  jbxwl::WinSystem(char* command, DWORD flag, BOOL wait)
 {
     STARTUPINFOA sinfo;
@@ -745,16 +882,4 @@ BOOL  EventHandler::wait(HANDLE handle, DWORD msec)
     if (m_wait_err!=WAIT_OBJECT_0) return FALSE;
     return TRUE;
 }
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-// メッセージ Dialog
-
-int  jbxwl::MessageDLG(LPCTSTR ttl, LPCTSTR msg, UINT type, HWND hWnd)
-{
-    int ret = ::MessageBox(hWnd, msg, ttl, type);
-    return ret;
-}
-
 
