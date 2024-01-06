@@ -293,14 +293,18 @@ CString  jbxwl::EasyGetSaveFileName(LPCTSTR title, LPCTSTR extnt, HWND hWnd)
 //
 CString  jbxwl::EasyGetSaveFolderName(LPCTSTR folder, LPCTSTR title, HWND hWnd) 
 {   
+#ifdef _UNICODE
     BROWSEINFO   bri;
+#else
+    BROWSEINFOA  bri;
+#endif
     LPITEMIDLIST pilst;
 
     TCHAR fldr[LNAME];
     CString  str = _T(""); 
 
     memset(fldr, 0, LNAME);
-    memset(&bri, 0, sizeof(BROWSEINFO));
+    memset(&bri, 0, sizeof(bri));
 
     bri.hwndOwner = hWnd;
     bri.lpszTitle = title;
@@ -309,12 +313,13 @@ CString  jbxwl::EasyGetSaveFolderName(LPCTSTR folder, LPCTSTR title, HWND hWnd)
     bri.lpfn = &EasyGetSaveFolderNameCallBack;  // コールバック関数
     bri.lParam = (LPARAM)folder;                // コールバック関数の引数
 
-    pilst = SHBrowseForFolderW(&bri);
+    pilst = SHBrowseForFolder(&bri);
     if (pilst!=NULL) {
-        SHGetPathFromIDListW(pilst, fldr);
+        SHGetPathFromIDList(pilst, fldr);
         str = fldr;
         CoTaskMemFree(pilst);
     }
+
     return str;
 }
 

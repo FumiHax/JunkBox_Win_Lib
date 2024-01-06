@@ -51,7 +51,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>Static</UseOfMfc>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -97,7 +97,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\JunkBox_Lib++\GraphLib;..\JunkBox_Lib++\BasicLib;..\JunkBox_Lib++\MathLib;..\JunkBox_Lib++\NiLib;..\JunkBox_Lib++\BasicLib\Lib;..\JunkBox_Lib++\ExtendLib;..\JunkBox_Lib++\ExtendLib\xLib;.\WinBaseLib;.\DLGBoxLib;.\MFCBaseLib;.\MFCLib;.\WinNiLib;<IncludePath>$(IncludePath);$(DXSDK_DIR)Include</IncludePath>;C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.7.0\inc;C:\Program Files (x86)\Microsoft SDKs\Speech\v11.0\Include;C:\Program Files (x86)\OpenNI\Include;C:\Program Files (x86)\OpenNI2\Include;C:\Program Files (x86)\PrimeSense\NiTE2\Include;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_LIB;_UNICODE;_DEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_LIB;_DEBUG</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -115,7 +115,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\JunkBox_Lib++\GraphLib;..\JunkBox_Lib++\BasicLib;..\JunkBox_Lib++\MathLib;..\JunkBox_Lib++\NiLib;..\JunkBox_Lib++\BasicLib\Lib;..\JunkBox_Lib++\ExtendLib;..\JunkBox_Lib++\ExtendLib\xLib;.\WinBaseLib;.\DLGBoxLib;.\MFCBaseLib;.\MFCLib;.\WinNiLib;<IncludePath>$(IncludePath);$(DXSDK_DIR)Include</IncludePath>;C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.7.0\inc;C:\Program Files\Microsoft SDKs\Speech\v11.0\Include;C:\Program Files\OpenNI\Include;C:\Program Files\OpenNI2\Include;C:\Program Files\PrimeSense\NiTE2\Include;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN64;WIN32;_LIB;_UNICODE;_DEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN64;WIN32;_LIB;_DEBUG;_UNICODE</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>

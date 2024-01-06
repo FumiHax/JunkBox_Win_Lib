@@ -27,6 +27,8 @@ Buffer  jbxwl::tc2Buffer(TCHAR* tchar, int size)
     Buffer buf = make_Buffer(size);
 
 #ifdef _UNICODE
+    setlocale(LC_ALL, ".UTF8");
+
     size_t len;
     int err = wcstombs_s(&len, (char*)buf.buf, buf.bufsz, tchar, _TRUNCATE);
 
@@ -46,6 +48,8 @@ Buffer  jbxwl::ts2Buffer(LPCTSTR str, int size)
     if (size<0) size = (int)tcslen(str);
 
 #ifdef _UNICODE
+    setlocale(LC_ALL, ".UTF8");
+
     Buffer buf = make_Buffer((size+1)*4);
     size_t len;
 
@@ -436,9 +440,15 @@ char*  jbxwl::GetProgramFolderA(void)
 
 CString  jbxwl::GetCurrentFolder(void)
 {
+#ifdef _UNICODE
     TCHAR   dirn[LMESG];
+    GetCurrentDirectory(LMESG, dirn);
 
-    GetCurrentDirectoryW(LMESG, dirn);
+#else
+    char    dirn[LMESG];
+    GetCurrentDirectory(LMESG, dirn);
+
+#endif
 
     CString folder = dirn;
     return folder;
