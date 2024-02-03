@@ -177,9 +177,9 @@ Buffer  jbxwl::utf8_to_sjis_byStr(CString str)
 Buffer  jbxwl::utf8_to_sjis(void* ptr, size_t len)
 {
     // utf-8 -> unicode
-    int len_unic = MultiByteToWideChar(CP_UTF8, 0, (LPCCH)ptr, len, NULL, 0);
+    int len_unic = MultiByteToWideChar(CP_UTF8, 0, (LPCCH)ptr, (int)len, NULL, 0);
     wchar_t* buf_unic = new wchar_t[len_unic];
-    MultiByteToWideChar(CP_UTF8, 0, (LPCCH)ptr, len + 1, buf_unic, len_unic);
+    MultiByteToWideChar(CP_UTF8, 0, (LPCCH)ptr, (int)len + 1, buf_unic, len_unic);
 
     // unicode -> sjis
     int len_sjis = WideCharToMultiByte(CP_THREAD_ACP, 0, buf_unic, -1, NULL, 0, NULL, NULL);
@@ -208,9 +208,9 @@ Buffer  jbxwl::sjis_to_utf8_byStr(CString str)
 Buffer  jbxwl::sjis_to_utf8(void* ptr, size_t len)
 {
     // sjis -> unicode
-    int len_unic = MultiByteToWideChar(CP_THREAD_ACP, 0, (LPCCH)ptr, len, NULL, 0);
+    int len_unic = MultiByteToWideChar(CP_THREAD_ACP, 0, (LPCCH)ptr, (int)len, NULL, 0);
     wchar_t* buf_unic = new wchar_t[len_unic];
-    MultiByteToWideChar(CP_THREAD_ACP, 0, (LPCCH)ptr, len + 1, buf_unic, len_unic);
+    MultiByteToWideChar(CP_THREAD_ACP, 0, (LPCCH)ptr, (int)len + 1, buf_unic, len_unic);
 
     // unicode -> utf-8
     int len_utf8 = WideCharToMultiByte(CP_UTF8, 0, buf_unic, -1, NULL, 0, NULL, NULL);
