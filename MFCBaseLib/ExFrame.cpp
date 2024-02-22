@@ -15,7 +15,6 @@ static char THIS_FILE[] = __FILE__;
 using namespace jbxwl;
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 // CExFrame
 
@@ -83,18 +82,15 @@ BEGIN_MESSAGE_MAP(CExFrame, CMDIChildWnd)
 END_MESSAGE_MAP()
 
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // CExFrame メッセージ ハンドラ
 
 BOOL  CExFrame::Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle, const RECT& rect, CMDIFrameWnd* pParentWnd, CCreateContext* pContext) 
 {
     dwStyle = dwStyle | WS_CLIPCHILDREN;
-    dwStyle = dwStyle & (~WS_MAXIMIZEBOX);  // 最大化ボタン禁止
+    //dwStyle = dwStyle & (~WS_MAXIMIZEBOX);  // 最大化ボタン禁止
     return CMDIChildWnd::Create(lpszClassName, lpszWindowName, dwStyle, rect, pParentWnd, pContext);
 }
-
 
 
 #ifdef ON_WM_ENTERSIZEMOVE
@@ -130,7 +126,6 @@ LRESULT  CExFrame::OnExitSizeMove(WPARAM wParam, LPARAM lParam)
 #endif
 
 
-
 //
 BOOL  CExFrame::OnEraseBkgnd(CDC* pDC)
 {
@@ -156,4 +151,3 @@ void  CExFrame::OnSizing(UINT fwSide, LPRECT pRect)
 
     pView->doReSize = true;
 }
-

@@ -1,12 +1,8 @@
 #sorry. Japanese Text only.
 #
 
-rewrite configure.ac, doxygen.conf
-working now ..... v1.4.4
+rewrite doxygen.conf
+working now ..... v1.5.3
 
-v1.4.4
-	fix Window Titledisappears bug.
-	fix clipboard bug at MFCLib/LogWnd***
-
-v1.4.3
-	Hello githib
+v1.5.3
+    最大化ボタン禁止 を取りやめ (ExFrame.cpp)

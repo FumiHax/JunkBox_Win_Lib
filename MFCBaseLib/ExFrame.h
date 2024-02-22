@@ -11,7 +11,6 @@ CExFrame クラス
 
 #include  "ExToolBar.h"
 
-
 //
 namespace jbxwl {
 
@@ -23,7 +22,6 @@ class   CExToolBar;
 class   CAppCallBack;
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 // CExFrame フレーム
 
@@ -33,7 +31,6 @@ class CExFrame : public CMDIChildWnd
 
 protected:
     CExFrame(); 
-
 
 // アトリビュート
 public:
@@ -56,11 +53,9 @@ public:
 
     bool            reSizeMoving;       // ウィンドウはリサイズまたは移動中
 
-
 // オペレーション
 public:
     virtual void onLButtonDBLClick() {}
-
 
 // オーバーライド
 public:
