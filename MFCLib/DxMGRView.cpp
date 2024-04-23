@@ -108,7 +108,6 @@ void CDxMGRView::OnInitialUpdate()
     else if (colorMode==GRAPH_COLOR_BGRA && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
     else if (colorMode==GRAPH_COLOR_XRGB && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
     else if (colorMode==GRAPH_COLOR_XBGR && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
-
     //
     xsize = cmnHead.xsize;
     ysize = cmnHead.ysize;
