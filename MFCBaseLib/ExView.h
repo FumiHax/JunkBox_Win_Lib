@@ -112,7 +112,6 @@ public:
     bool            vSBctrl;        // Vert Scroll のコントロール．スクロールを許可するか？
     int             viewMode;       // Z, X, Y方向から見る
     int             colorMode;      // カラーモード
-    bool            useBank;        // Bank モード
 
     int             cMax;           // コントラストの最大値（可変）
     int             cMin;           // コントラストの最小値（可変）

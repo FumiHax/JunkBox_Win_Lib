@@ -99,20 +99,15 @@ void CDxMGRView::OnInitialUpdate()
     cmnHead = pDoc->cmnHead;
     if (isNull(cmnHead.grptr)) return;
 
-    colorMode = pDoc->colorMode & GRAPH_COLOR_MASK;
-    if (pDoc->colorMode & GRAPH_COLOR_USE_BANK) useBank = true; 
-
-    if (useBank) {
-        if      (colorMode==GRAPH_COLOR_RGB  && cmnHead.zsize!=3) colorMode = GRAPH_COLOR_MONO;
-        else if (colorMode==GRAPH_COLOR_BGR  && cmnHead.zsize!=3) colorMode = GRAPH_COLOR_MONO;
-        else if (colorMode==GRAPH_COLOR_ARGB && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
-        else if (colorMode==GRAPH_COLOR_ABGR && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
-        else if (colorMode==GRAPH_COLOR_RGBA && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
-        else if (colorMode==GRAPH_COLOR_BGRA && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
-        else if (colorMode==GRAPH_COLOR_XRGB && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
-        else if (colorMode==GRAPH_COLOR_XBGR && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
-    }
-    if (colorMode==GRAPH_COLOR_MONO) useBank = false;
+    colorMode = pDoc->colorMode;
+    if      (colorMode==GRAPH_COLOR_RGB  && cmnHead.zsize!=3) colorMode = GRAPH_COLOR_MONO;
+    else if (colorMode==GRAPH_COLOR_BGR  && cmnHead.zsize!=3) colorMode = GRAPH_COLOR_MONO;
+    else if (colorMode==GRAPH_COLOR_ARGB && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
+    else if (colorMode==GRAPH_COLOR_ABGR && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
+    else if (colorMode==GRAPH_COLOR_RGBA && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
+    else if (colorMode==GRAPH_COLOR_BGRA && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
+    else if (colorMode==GRAPH_COLOR_XRGB && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
+    else if (colorMode==GRAPH_COLOR_XBGR && cmnHead.zsize!=4) colorMode = GRAPH_COLOR_MONO;
 
     //
     xsize = cmnHead.xsize;

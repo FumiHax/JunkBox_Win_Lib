@@ -57,10 +57,9 @@ void  CvThumbNailFrame::onLButtonDBLClick()
     int n = ((CvThumbNailDoc*)pDoc)->GetTNailNum(pt) - 1;
 
     if (n>=0) {
-        colorMode = pDoc->colorMode & GRAPH_COLOR_MASK;
+        colorMode = pDoc->colorMode;
 
         // Plane毎に色が分かれている場合は Plane（8bit）毎に表示
-        //if (pDoc->colorMode & GRAPH_COLOR_USE_PLANE)  colorMode = GRAPH_COLOR_MONO;
         /**/
         colorMode = pDoc->colorMode;
         if (colorMode==GRAPH_COLOR_RGB  || colorMode==GRAPH_COLOR_BGR  || 
