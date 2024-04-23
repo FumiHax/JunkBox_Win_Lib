@@ -73,7 +73,7 @@ CExView::CExView()
     vSBctrl     = true; 
     viewMode    = VIEW_ZDIR;
     colorMode   = GRAPH_COLOR_MONO;
-    usePlane    = false;
+    useBank     = false;
 
     cMax        = 0;
     cMin        = 0;
