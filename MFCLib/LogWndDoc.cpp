@@ -37,7 +37,7 @@ CLogWndDoc::CLogWndDoc()
     binHexMode = TRUE;
 //  m_locked   = FALSE;
 
-    ringBuffer = new CLogRingBuffer(MAXBUFFERLINE);
+    ringBuffer = new CLogRingBuffer(MAXLOGBUFFERLINE);
 }
 
 
@@ -51,7 +51,7 @@ CLogWndDoc::CLogWndDoc(int bufsz, BOOL binhex)
     save_fname = _T("");
     binHexMode = binhex;
 
-    if (bufsz<=0) bufsz = MAXBUFFERLINE;
+    if (bufsz<=0) bufsz = MAXLOGBUFFERLINE;
     ringBuffer = new CLogRingBuffer(bufsz);
 }
 

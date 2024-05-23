@@ -8,7 +8,7 @@
 
 
 // 最大行数
-#define  MAXBUFFERLINE 100000
+#define  MAXLOGBUFFERLINE 100000
 
 
 //
