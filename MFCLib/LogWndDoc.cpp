@@ -213,7 +213,8 @@ CString  CLogWndDoc::easyGetSaveFileName(LPCTSTR title, HWND hWnd)
     ofn.hwndOwner = hWnd;
     ofn.Flags = 0;
     ofn.lpstrFile = fn;
-    ofn.nMaxFile  = LNAME;
+    //ofn.nMaxFile  = LNAME;
+    ofn.nMaxFile = sizeof(fn) / sizeof(fn[0]);
     ofn.lpstrTitle = title;
 
     BOOL ret = GetSaveFileName(&ofn);

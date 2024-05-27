@@ -281,11 +281,20 @@ CString  jbxwl::EasyGetOpenFileName(LPCTSTR title, HWND hWnd)
     ofn.hwndOwner = hWnd;
     ofn.Flags = OFN_HIDEREADONLY;
     ofn.lpstrFile = fn;
-    ofn.nMaxFile = LPATH;
+    ofn.nMaxFile = sizeof(fn) / sizeof(fn[0]);
     if (title != NULL) ofn.lpstrTitle = title;
 
     GetOpenFileName(&ofn);
     return fn;
+
+    /*
+    CFileDialog fileDialog(true);
+
+    if (fileDialog.DoModal() == IDOK) {
+        return fileDialog.GetPathName();
+    }
+    return _T("");
+    */
 }
 
 
@@ -318,7 +327,8 @@ CString  jbxwl::EasyGetSaveFileName(LPCTSTR title, LPCTSTR extnt, HWND hWnd)
     ofn.hwndOwner = hWnd;
     ofn.Flags = 0;
     ofn.lpstrFile = fn;
-    ofn.nMaxFile = LPATH;
+    //ofn.nMaxFile = LPATH;
+    ofn.nMaxFile = sizeof(fn) / sizeof(fn[0]);
     ofn.lpstrDefExt = extnt;
     if (title != NULL) ofn.lpstrTitle = title;
 
