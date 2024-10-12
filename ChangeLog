@@ -6,3 +6,4 @@ working now ..... v1.5.3
 
 v1.5.3
     最大化ボタン禁止 を取りやめ (ExFrame.cpp)
+    jbxwl::mbs2ts(char* str) 文字数制限を撤廃

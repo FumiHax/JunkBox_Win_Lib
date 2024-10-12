@@ -83,10 +83,29 @@ CString  jbxwl::mbs2ts(char* str)
 
 #ifdef _UNICODE
     //setlocale(LC_ALL, ".UTF8");
-    TCHAR  tchar[LBUF];
+    TCHAR  tchar[SBUFSZ];
     size_t len = 0;
-    int err = mbstowcs_s(&len, tchar, LBUF, str, strlen(str));
-    if (err==0) buf = tchar;
+    size_t size = strlen(str);
+    int err = -1;
+
+    if (size + 1 > SBUFSZ) {
+        TCHAR tchar_recv[RECVBUFSZ];
+        if (size + 1 > RECVBUFSZ) {
+            size_t ptchar_sz = (size + 1) * sizeof(TCHAR);
+            TCHAR* ptchar = (TCHAR*)malloc(ptchar_sz);
+            err = mbstowcs_s(&len, ptchar, ptchar_sz, str, size);
+            if (err == 0) buf = ptchar;
+            ::free(ptchar);
+        }
+        else {
+            err = mbstowcs_s(&len, tchar_recv, RECVBUFSZ, str, size);
+            if (err == 0) buf = tchar_recv;
+        }
+    }
+    else {
+        err = mbstowcs_s(&len, tchar, SBUFSZ, str, size);
+        if (err == 0) buf = tchar;
+    }
 #else
     buf = (LPTSTR)str;
 #endif
